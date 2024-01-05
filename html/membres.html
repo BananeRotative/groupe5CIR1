@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
- <head>
- <meta charset="utf-8">
- <title> index </title>
- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
- </head>
- <body>
+<head>
+    <meta charset="utf-8">
+    <title> index </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
     <nav>
         <ul>
                 <li><a href="accueil.html">Accueil</a></li>
@@ -27,13 +27,59 @@
         </ul>
     </nav>
 
-    <b>Enseignants Chercheurs permanents</b>
-        <div class="card">
-            <img src="img_avatar.png" alt="Avatar">
-            <h3>Ayoub Karine</h3>
-            <p>Enseignant chercheur ISEN Yncréa Ouest - Nantes</p>
-            <button href="https://ayoubkarine.github.io"><span class="material-symbols-outlined" href="https://ayoubkarine.github.io">language</span></button>
+    <div class="content">
+        <h1>Membres de l'équipe</h1>
 
+        <div id="enseignants-chercheurs-perma">
+            <h2>Enseignants chercheurs permanents</h2>
+            <div class="card-list">
+                <div class="card" id="card-Ayoub-Karine">
+                    <img src="./../images/members_cards/Ayoub_Karine.jpg" alt="Ayoub Karine" class="card-img">
+                    <div class="card-desc">
+                        <h3 class="card-name">Ayoub Karine</h3>
+                        <p class="card-job">Enseignant chercheur</p>
+                        <p class="card-address">ISEN Yncréa Ouest - Nantes</p>
+                        <a href="mailto:ayoub.karine@isen ouest.ycnrea.fr" class="card-mail">ayoub.karine@isen ouest.ycnrea.fr</a>
+                        <hr>
+                        <div class="card-links">
+                            <a class="card-link website" href="https://ayoubkarine.github.io/">
+                                <img href="./../images/members_cards/globe-solid.svg" alt="website link">
+                            </a>
+                            <a class="card-link linkedin" href="https://www.linkedin.com/in/ayoub-karine-a01ba384">
+                                <img href="./../images/members_cards/linkedin-in.svg" alt="linkedin link">
+                            </a>
+                            <a class="card-link google-scholar" href="https://scholar.google.fr/citations?user=acAw9KAAAAAJ&hl=fr">
+                                <img href="./../images/members_cards/google-scholar.svg" alt="google scholar link">
+                            </a>
+                            <a class="card-link research-gate" href="https://www.researchgate.net/profile/Ayoub_Karine?ev=hdr_xprf&_sg=eJkSR2ljqVo6Ub414o2YwqTDXE2e1tV5SPoWZQv35B3oJoSgYfbNmLlZt57lBUJCiaEapS_Iz82ix5Z6XveLFdaC">
+                                <img href="./../images/members_cards/researchgate.svg" alt="research gate link">
+                            </a>
+                        </div>
+                        <div class="card-tags">
+                            <div class="card-tag">
+                                <p>Image processing</p>
+                            </div>
+                            <div class="card-tag">
+                                <p>Machine learning</p>
+                            </div>
+                            <div class="card-tag">
+                                <p>Deep learning</p>
+                            </div>
+                            <div class="card-tag">
+                                <p>Remote sensing</p>
+                            </div>
+                            <div class="card-tag">
+                                <p>Computer vision</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+    </div>
  </body>
 </html>
+
+
+<button href="https://ayoubkarine.github.io"><span class="material-symbols-outlined" href="https://ayoubkarine.github.io">language</span></button>
