@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title> index </title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="/CSS/membres.css">
+    <link rel="stylesheet" href="./../CSS/membres.css">
     <link rel="stylesheet" href="./../CSS/navbar.css">
 </head>
 <body>
@@ -67,14 +67,19 @@
         </div>
     </nav>
 
-    <div class="content">
+    <div id="content">
         <h1>Membres de l'équipe</h1>
 
-        <div id="enseignants-chercheurs-perma">
+        <div class="member-cards-group" id="enseignants-chercheurs-perma">
             <h2>Enseignants chercheurs permanents</h2>
             <div class="card-list">
-                <div class="card" id="card-Ayoub-Karine">
-                    <img src="./../images/members_cards/Ayoub_Karine.jpg" alt="Ayoub Karine" class="card-img">
+                <div class="card">
+                    <svg class="card-img">
+                        <mask id="mask1">
+                            <circle cx="150" cy="100" r="100" fill="white"/>
+                        </mask>
+                        <image xlink:href="./../images/members_cards/Ayoub_Karine.jpg" mask="url(#mask1)"></image>
+                    </svg>
                     <div class="card-desc">
                         <h3 class="card-name">Ayoub Karine</h3>
                         <p class="card-job">Enseignant chercheur</p>
@@ -82,17 +87,25 @@
                         <a href="mailto:ayoub.karine@isen ouest.ycnrea.fr" class="card-mail">ayoub.karine@isen ouest.ycnrea.fr</a>
                         <hr>
                         <div class="card-links">
-                            <a class="card-link website" href="https://ayoubkarine.github.io/"style="text-decoration: none;"target="_blank">
-                                <img src="./../images/members_cards/globe-solid.svg" alt="website link">
+                            <a class="card-link website" href="https://ayoubkarine.github.io/" target="_blank">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                    <path d="M22 16.0007C22 17.3882 21.925 18.7257 21.7938 20.0007H10.2063C10.0688 18.7257 10 17.3882 10 16.0007C10 14.6132 10.075 13.2757 10.2063 12.0007H21.7938C21.9313 13.2757 22 14.6132 22 16.0007ZM23.8 12.0007H31.4937C31.825 13.282 32 14.6195 32 16.0007C32 17.382 31.825 18.7195 31.4937 20.0007H23.8C23.9312 18.7132 24 17.3757 24 16.0007C24 14.6257 23.9312 13.2882 23.8 12.0007ZM30.8375 10.0007H23.5438C22.9188 6.00698 21.6812 2.66323 20.0875 0.525732C24.9813 1.81948 28.9625 5.36948 30.8312 10.0007H30.8375ZM21.5187 10.0007H10.4812C10.8625 7.72573 11.45 5.71323 12.1687 4.08198C12.825 2.60698 13.5562 1.53823 14.2625 0.863232C14.9625 0.200732 15.5437 0.000732422 16 0.000732422C16.4562 0.000732422 17.0375 0.200732 17.7375 0.863232C18.4437 1.53823 19.175 2.60698 19.8312 4.08198C20.5562 5.70698 21.1375 7.71948 21.5187 10.0007ZM8.45625 10.0007H1.1625C3.0375 5.36948 7.0125 1.81948 11.9125 0.525732C10.3188 2.66323 9.08125 6.00698 8.45625 10.0007ZM0.50625 12.0007H8.2C8.06875 13.2882 8 14.6257 8 16.0007C8 17.3757 8.06875 18.7132 8.2 20.0007H0.50625C0.175 18.7195 0 17.382 0 16.0007C0 14.6195 0.175 13.282 0.50625 12.0007ZM12.1687 27.9132C11.4437 26.2882 10.8625 24.2757 10.4812 22.0007H21.5187C21.1375 24.2757 20.55 26.2882 19.8312 27.9132C19.175 29.3882 18.4437 30.457 17.7375 31.132C17.0375 31.8007 16.4562 32.0007 16 32.0007C15.5437 32.0007 14.9625 31.8007 14.2625 31.1382C13.5562 30.4632 12.825 29.3945 12.1687 27.9195V27.9132ZM8.45625 22.0007C9.08125 25.9945 10.3188 29.3382 11.9125 31.4757C7.0125 30.182 3.0375 26.632 1.1625 22.0007H8.45625ZM30.8375 22.0007C28.9625 26.632 24.9875 30.182 20.0938 31.4757C21.6875 29.3382 22.9187 25.9945 23.55 22.0007H30.8375Z"/>
+                                </svg> 
                             </a>
-                            <a class="card-link linkedin" href="https://www.linkedin.com/in/ayoub-karine-a01ba384"style="text-decoration: none;"target="_blank">
-                                <img src="./../images/members_cards/linkedin-in.svg" alt="linkedin link">
+                            <a class="card-link linkedin" href="https://www.linkedin.com/in/ayoub-karine-a01ba384" target="_blank">
+                                <svg width="29" height="28" viewBox="0 0 29 28" fill="none">
+                                    <path d="M6.9355 28.0007H1.12925V9.30698H6.9355V28.0007ZM4.02925 6.75698C2.173 6.75698 0.666748 5.21948 0.666748 3.36323C0.666748 2.47144 1.02101 1.61618 1.6516 0.985586C2.28219 0.354995 3.13746 0.000732422 4.02925 0.000732422C4.92104 0.000732422 5.7763 0.354995 6.40689 0.985586C7.03749 1.61618 7.39175 2.47144 7.39175 3.36323C7.39175 5.21948 5.8855 6.75698 4.02925 6.75698ZM28.6605 28.0007H22.8667V18.9007C22.8667 16.732 22.823 13.9507 19.848 13.9507C16.8292 13.9507 16.3667 16.307 16.3667 18.7445V28.0007H10.5667V9.30698H16.1355V11.857H16.2167C16.9917 10.3882 18.8855 8.83823 21.7105 8.83823C27.5855 8.83823 28.6667 12.707 28.6667 17.732V28.0007H28.6605Z"/>
+                                </svg>
                             </a>
-                            <a class="card-link google-scholar" href="https://scholar.google.fr/citations?user=acAw9KAAAAAJ&hl=fr"style="text-decoration: none;"target="_blank">
-                                <img src="./../images/members_cards/google-scholar.svg" alt="google scholar link">
+                            <a class="card-link google-scholar" href="https://scholar.google.fr/citations?user=acAw9KAAAAAJ&hl=fr" target="_blank">
+                                <svg width="33" height="32" viewBox="0 0 33 32" fill="none">
+                                    <path d="M24.7645 18.657C24.7645 18.657 24.7645 18.6632 24.7708 18.6632C25.3458 19.8757 25.6708 21.232 25.6708 22.6632C25.6645 27.8195 21.4895 32.0007 16.3333 32.0007C11.177 32.0007 7.002 27.8195 7.002 22.6695C7.002 21.2382 7.327 19.882 7.902 18.6695C8.00825 18.4445 8.127 18.2195 8.252 18.0007C8.527 17.5257 8.8395 17.082 9.1895 16.6695C10.902 14.632 13.4708 13.3382 16.3395 13.3382C18.4395 13.3382 20.377 14.032 21.9395 15.207C22.5083 15.6382 23.027 16.1257 23.4895 16.6757C23.8395 17.0882 24.152 17.5382 24.427 18.007C24.552 18.2195 24.6645 18.4445 24.7708 18.6632L24.7645 18.657ZM26.4145 17.482C24.5333 13.832 20.727 11.332 16.3333 11.332C11.9395 11.332 8.13325 13.832 6.252 17.482L0.333252 12.6695L16.3333 0.000732422L32.3333 12.6695L26.4145 17.4882V17.482Z"/>
+                                </svg> 
                             </a>
-                            <a class="card-link research-gate" href="https://www.researchgate.net/profile/Ayoub_Karine?ev=hdr_xprf&_sg=eJkSR2ljqVo6Ub414o2YwqTDXE2e1tV5SPoWZQv35B3oJoSgYfbNmLlZt57lBUJCiaEapS_Iz82ix5Z6XveLFdaC" target="_blank" style="text-decoration: none;">
-                                <img src="./../images/members_cards/researchgate.svg" alt="research gate link">
+                            <a class="card-link research-gate" href="https://www.researchgate.net/profile/Ayoub_Karine?ev=hdr_xprf&_sg=eJkSR2ljqVo6Ub414o2YwqTDXE2e1tV5SPoWZQv35B3oJoSgYfbNmLlZt57lBUJCiaEapS_Iz82ix5Z6XveLFdaC" target="_blank">
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                    <path d="M0 0.000732422V28.0007H28V0.000732422H0ZM16.3875 20.9007C15.975 21.0882 14.3125 21.2757 13.2625 20.0132C12.6875 19.3507 11.6812 17.932 10.625 16.0382C10.0688 16.0382 9.70625 16.0382 9.2875 16.0007V18.9007C9.2875 20.3695 9.6625 20.2257 10.9 20.3945V20.9007C10.4688 20.882 9.45625 20.8507 8.675 20.8507C7.85625 20.8507 7.04375 20.8882 6.575 20.9007V20.3945C7.54375 20.2132 7.95 20.3132 7.95 18.9007V12.0632C7.95 10.6507 7.55 10.7507 6.575 10.5695V10.0632C8.1875 10.1257 9.89375 10.0257 11.0063 10.0257C12.9875 10.0257 14.5 10.9257 14.5 12.8757C14.5 14.1945 13.4563 15.5132 12.05 15.8445C12.9 17.357 13.925 18.6945 14.6875 19.5257C15.1375 20.0132 15.7625 20.4445 16.3875 20.4445V20.9007ZM17.8188 12.4632C16.3625 12.4632 15.8062 11.482 15.8062 10.4507V8.43823C15.8062 7.67573 16.3562 6.53823 17.9312 6.53823C19.5063 6.53823 19.8312 7.65698 19.8312 7.65698L19.1625 8.10698C19.1625 8.10698 18.8188 7.32573 17.9312 7.32573C17.4375 7.32573 16.7 7.78198 16.7 8.55698V10.232C16.7 11.0695 17.1125 11.6882 17.8188 11.6882C18.7 11.6882 19.1625 11.007 19.1625 10.0132H18.0438V9.34448H19.9438C19.9438 10.6257 20.2375 12.4632 17.8188 12.4632ZM10.5375 15.257C9.95 15.257 9.6875 15.2382 9.2875 15.207V10.8507C9.6875 10.8132 10.225 10.8132 10.6938 10.8132C12.15 10.8132 13.0188 11.5757 13.0188 12.9695C13.0188 14.3382 12.0813 15.257 10.5375 15.257Z"/>
+                                </svg> 
                             </a>
                         </div>
                         <div class="card-tags">
@@ -114,9 +127,149 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="card">
+                    <svg class="card-img">
+                        <mask id="mask1">
+                            <circle cx="150" cy="100" r="100" fill="white"/>
+                        </mask>
+                        <image xlink:href="./../images/members_cards/Maher_Jridi.jpg" mask="url(#mask1)"></image>
+                    </svg>
+                    <div class="card-desc">
+                        <h3 class="card-name">Maher Jridi</h3>
+                        <p class="card-job">Enseignant chercheur, HDR</p>
+                        <p class="card-address">ISEN Yncréa Ouest - Nantes</p>
+                        <a href="mailto:maher.jridi@isen-ouest.ycnrea.fr" class="card-mail">maher.jridi@isen-ouest.ycnrea.fr</a>
+                        <hr>
+                        <div class="card-links">
+                            <a class="card-link website" href="https://sites.google.com/website/jridimaher/" target="_blank">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                    <path d="M22 16.0007C22 17.3882 21.925 18.7257 21.7938 20.0007H10.2063C10.0688 18.7257 10 17.3882 10 16.0007C10 14.6132 10.075 13.2757 10.2063 12.0007H21.7938C21.9313 13.2757 22 14.6132 22 16.0007ZM23.8 12.0007H31.4937C31.825 13.282 32 14.6195 32 16.0007C32 17.382 31.825 18.7195 31.4937 20.0007H23.8C23.9312 18.7132 24 17.3757 24 16.0007C24 14.6257 23.9312 13.2882 23.8 12.0007ZM30.8375 10.0007H23.5438C22.9188 6.00698 21.6812 2.66323 20.0875 0.525732C24.9813 1.81948 28.9625 5.36948 30.8312 10.0007H30.8375ZM21.5187 10.0007H10.4812C10.8625 7.72573 11.45 5.71323 12.1687 4.08198C12.825 2.60698 13.5562 1.53823 14.2625 0.863232C14.9625 0.200732 15.5437 0.000732422 16 0.000732422C16.4562 0.000732422 17.0375 0.200732 17.7375 0.863232C18.4437 1.53823 19.175 2.60698 19.8312 4.08198C20.5562 5.70698 21.1375 7.71948 21.5187 10.0007ZM8.45625 10.0007H1.1625C3.0375 5.36948 7.0125 1.81948 11.9125 0.525732C10.3188 2.66323 9.08125 6.00698 8.45625 10.0007ZM0.50625 12.0007H8.2C8.06875 13.2882 8 14.6257 8 16.0007C8 17.3757 8.06875 18.7132 8.2 20.0007H0.50625C0.175 18.7195 0 17.382 0 16.0007C0 14.6195 0.175 13.282 0.50625 12.0007ZM12.1687 27.9132C11.4437 26.2882 10.8625 24.2757 10.4812 22.0007H21.5187C21.1375 24.2757 20.55 26.2882 19.8312 27.9132C19.175 29.3882 18.4437 30.457 17.7375 31.132C17.0375 31.8007 16.4562 32.0007 16 32.0007C15.5437 32.0007 14.9625 31.8007 14.2625 31.1382C13.5562 30.4632 12.825 29.3945 12.1687 27.9195V27.9132ZM8.45625 22.0007C9.08125 25.9945 10.3188 29.3382 11.9125 31.4757C7.0125 30.182 3.0375 26.632 1.1625 22.0007H8.45625ZM30.8375 22.0007C28.9625 26.632 24.9875 30.182 20.0938 31.4757C21.6875 29.3382 22.9187 25.9945 23.55 22.0007H30.8375Z"/>
+                                </svg> 
+                            </a>
+                            <a class="card-link linkedin" href="https://www.linkedin.com/in/maher-jridi-a7861a3a/?originalSubdomain=fr" target="_blank">
+                                <svg width="29" height="28" viewBox="0 0 29 28" fill="none">
+                                    <path d="M6.9355 28.0007H1.12925V9.30698H6.9355V28.0007ZM4.02925 6.75698C2.173 6.75698 0.666748 5.21948 0.666748 3.36323C0.666748 2.47144 1.02101 1.61618 1.6516 0.985586C2.28219 0.354995 3.13746 0.000732422 4.02925 0.000732422C4.92104 0.000732422 5.7763 0.354995 6.40689 0.985586C7.03749 1.61618 7.39175 2.47144 7.39175 3.36323C7.39175 5.21948 5.8855 6.75698 4.02925 6.75698ZM28.6605 28.0007H22.8667V18.9007C22.8667 16.732 22.823 13.9507 19.848 13.9507C16.8292 13.9507 16.3667 16.307 16.3667 18.7445V28.0007H10.5667V9.30698H16.1355V11.857H16.2167C16.9917 10.3882 18.8855 8.83823 21.7105 8.83823C27.5855 8.83823 28.6667 12.707 28.6667 17.732V28.0007H28.6605Z"/>
+                                </svg>
+                            </a>
+                            <a class="card-link google-scholar" href="https://scholar.google.fr/citations?hl=fr&user=N8Xv4GQAAAAJ"target="_blank">
+                                <svg width="33" height="32" viewBox="0 0 33 32" fill="none">
+                                    <path d="M24.7645 18.657C24.7645 18.657 24.7645 18.6632 24.7708 18.6632C25.3458 19.8757 25.6708 21.232 25.6708 22.6632C25.6645 27.8195 21.4895 32.0007 16.3333 32.0007C11.177 32.0007 7.002 27.8195 7.002 22.6695C7.002 21.2382 7.327 19.882 7.902 18.6695C8.00825 18.4445 8.127 18.2195 8.252 18.0007C8.527 17.5257 8.8395 17.082 9.1895 16.6695C10.902 14.632 13.4708 13.3382 16.3395 13.3382C18.4395 13.3382 20.377 14.032 21.9395 15.207C22.5083 15.6382 23.027 16.1257 23.4895 16.6757C23.8395 17.0882 24.152 17.5382 24.427 18.007C24.552 18.2195 24.6645 18.4445 24.7708 18.6632L24.7645 18.657ZM26.4145 17.482C24.5333 13.832 20.727 11.332 16.3333 11.332C11.9395 11.332 8.13325 13.832 6.252 17.482L0.333252 12.6695L16.3333 0.000732422L32.3333 12.6695L26.4145 17.4882V17.482Z"/>
+                                </svg> 
+                            </a>
+                            <a class="card-link research-gate" href="https://www.researchgate.net/profile/Maher_Jridi" target="_blank">
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                    <path d="M0 0.000732422V28.0007H28V0.000732422H0ZM16.3875 20.9007C15.975 21.0882 14.3125 21.2757 13.2625 20.0132C12.6875 19.3507 11.6812 17.932 10.625 16.0382C10.0688 16.0382 9.70625 16.0382 9.2875 16.0007V18.9007C9.2875 20.3695 9.6625 20.2257 10.9 20.3945V20.9007C10.4688 20.882 9.45625 20.8507 8.675 20.8507C7.85625 20.8507 7.04375 20.8882 6.575 20.9007V20.3945C7.54375 20.2132 7.95 20.3132 7.95 18.9007V12.0632C7.95 10.6507 7.55 10.7507 6.575 10.5695V10.0632C8.1875 10.1257 9.89375 10.0257 11.0063 10.0257C12.9875 10.0257 14.5 10.9257 14.5 12.8757C14.5 14.1945 13.4563 15.5132 12.05 15.8445C12.9 17.357 13.925 18.6945 14.6875 19.5257C15.1375 20.0132 15.7625 20.4445 16.3875 20.4445V20.9007ZM17.8188 12.4632C16.3625 12.4632 15.8062 11.482 15.8062 10.4507V8.43823C15.8062 7.67573 16.3562 6.53823 17.9312 6.53823C19.5063 6.53823 19.8312 7.65698 19.8312 7.65698L19.1625 8.10698C19.1625 8.10698 18.8188 7.32573 17.9312 7.32573C17.4375 7.32573 16.7 7.78198 16.7 8.55698V10.232C16.7 11.0695 17.1125 11.6882 17.8188 11.6882C18.7 11.6882 19.1625 11.007 19.1625 10.0132H18.0438V9.34448H19.9438C19.9438 10.6257 20.2375 12.4632 17.8188 12.4632ZM10.5375 15.257C9.95 15.257 9.6875 15.2382 9.2875 15.207V10.8507C9.6875 10.8132 10.225 10.8132 10.6938 10.8132C12.15 10.8132 13.0188 11.5757 13.0188 12.9695C13.0188 14.3382 12.0813 15.257 10.5375 15.257Z"/>
+                                </svg> 
+                            </a>
+                        </div>
+                        <div class="card-tags">
+                            <div class="card-tag">
+                                <p>High Performance Embedded Computing</p>
+                            </div>
+                            <div class="card-tag">
+                                <p>IoT</p>
+                            </div>
+                            <div class="card-tag">
+                                <p>IoMT</p>
+                            </div>
+                            <div class="card-tag">
+                                <p>Industrial IoT</p>
+                            </div>
+                            <div class="card-tag">
+                                <p>Digital VLSI design</p>
+                            </div>
+                            <div class="card-tag">
+                                <p>Algorithm-Architecture Co-Desing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
+        <div class="member-cards-group" id="post-docs">
+            <h2>Post-docs</h2>
+            <div class="card-list">
+                <div class="card">
+                    <svg class="card-img">
+                        <mask id="mask1">
+                            <circle cx="150" cy="100" r="100" fill="white"/>
+                        </mask>
+                        <image xlink:href="./../images/members_cards/Lefebvre_Sylvain.png" mask="url(#mask1)"></image>
+                    </svg>
+                    <div class="card-desc">
+                        <h3 class="card-name">Sylvain Lefebvre</h3>
+                        <p class="card-date">de 01/2022 à 04/2023</p>
+                        <p class="card-project-subject">Industrie 4.0</p>
+                        <p class="card-address">ISEN Yncréa Ouest - Nantes</p>
+                        <a href="mailto:sylvain.lefebvre@isen-ouest.yncrea.fr" class="card-mail">sylvain.lefebvre@isen-ouest.yncrea.fr</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="member-cards-group" id="doctorants-actuels">
+            <h2>Doctorants actuels</h2>
+            <div class="card-list">
+                <div class="card">
+                    <svg class="card-img">
+                        <mask id="mask1">
+                            <circle cx="150" cy="100" r="100" fill="white"/>
+                        </mask>
+                        <image xlink:href="./../images/members_cards/salima_bourbia.png" mask="url(#mask1)"></image>
+                    </svg>
+                    <div class="card-desc">
+                        <h3 class="card-name">Salima Bourbia</h3>
+                        <p class="card-date">depuis 12/2020</p>
+                        <p class="card-project-subject">Sujet : Evaluation de la qualité des nuages de points 3D</p>
+                        <p class="card-encadrants">Encadrants : Ayoub Karine, Maher Jridi</p>
+                        <p class="card-address">ISEN Yncréa Ouest - Nantes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="member-cards-group" id="anciens-doctorants">
+            <h2>Anciens doctorants</h2>
+            <div class="card-list">
+                <div class="card">
+                    <svg class="card-img">
+                        <mask id="mask1">
+                            <circle cx="150" cy="100" r="100" fill="white"/>
+                        </mask>
+                        <image xlink:href="./../images/members_cards/Djamel_Benarab.jpg" mask="url(#mask1)"></image>
+                    </svg>
+                    <div class="card-desc">
+                        <h3 class="card-name">Djamel Benarab</h3>
+                        <p class="card-job">Ingénieur R&D chez Diota</p>
+                        <p class="card-date">Thèse soutenue le 02/12/2016</p>
+                        <p class="card-project-subject">Sujet : Suivi automatique de nageurs à partir des séquences vidéo : application à l'analyse des performances</p>
+                        <p class="card-encadrants">Encadrants : Ayman Alfalou, Thibault Napoléon, Antoine Verney, Philippe Hellard</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="member-cards-group" id="stagiaires">
+            <h2>Stagiaires</h2>
+            <div class="card-list">
+                <div class="card">
+                    <svg class="card-img">
+                        <mask id="mask1">
+                            <circle cx="150" cy="100" r="100" fill="white"/>
+                        </mask>
+                        <image xlink:href="./../images/members_cards/salima_bourbia.png" mask="url(#mask1)"></image>
+                    </svg>
+                    <div class="card-desc">
+                        <h3 class="card-name">Salima Bourbia</h3>
+                        <p class="card-date">du 01/03/2020 au 01/09/2020</p>
+                        <p class="card-project-subject">Sujet : Quality assessment of stereoscopic images using deep learning</p>
+                        <p class="card-encadrants">Encadrants : Ayoub Karine, Mohammed EL Hassouni, Aladine Chetouani</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer class="red-background">
