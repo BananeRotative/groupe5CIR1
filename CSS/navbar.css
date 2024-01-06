@@ -1,6 +1,14 @@
+/* Global */
+
 html {
     font-family: "Open Sans", Georgia;
 }
+
+body {
+    margin: 0px;
+}
+
+/* Navbar */
 
 nav a {
     text-decoration: none;
@@ -103,4 +111,60 @@ nav a {
     position:absolute;
     width: 100%;
     z-index: 1000;
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    align-items: flex-start;
+    align-self: stretch; 
+}
+
+#footer-coordonnees, #footer-developers {
+    display: flex;
+    padding: 0.9375rem 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 0; 
+}
+
+#footer-developers {
+    gap: 0.3125rem; 
+}
+
+#footer-ecoles {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch; 
+}
+
+footer h3 {
+    align-self: stretch; 
+    color: white;
+
+    /* Footer title font */
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase; 
+}
+
+/* all text in footer (except titles) */
+.footer-address, .footer-phone, .footer-developer {
+    align-self: stretch; 
+    color: white;
+
+    /* Footer line font */
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+}
+
+.footer-developer {
+    text-decoration: none;
 }
