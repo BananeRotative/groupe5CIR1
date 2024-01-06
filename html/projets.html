@@ -1,103 +1,143 @@
 <!DOCTYPE html>
 <html lang="fr">
- <head>
- <meta charset="utf-8">
- <title> index </title>
- </head>
- <body>
-    <nav>
-        <ul>
-                <li><a href="accueil.html">Accueil</a></li>
-                <li><a href="recherche.html">Recherche</a></li>
-                    <ul class="sous-menu1">
-                        <li>Thématiques de recherche</li>
-                        <li>Plateformes technologiques</li>
-                    </ul>
-                <li><a href="membres.html">Membres</a></li>
-                <li><a href="projets.html">Projet</a></li>
-                <li><a href="publications.html">Publication</a></li>
-                <li><a href="partenaires.html">Partenaires</a></li>
-                <li><a href="infos_contacts.html">Infos et contacts</a></li>
-                    <ul>
-                        <li>Contactez-nous</li>
-                        <li>Plan d'accès</li>
-                        <li>Offres d'emploi</li>
-                    </ul>
-        </ul>
-    </nav>
-    <div class="projet-encours">
-        <div class="castel">
-            <p> <h2>Projets en cours</h2>
-                <h3>CASTEL : accompagnement dans la transformation digitale</h3>
-                <b>Description :</b> Contrat industriel en partenariat avec l’entreprise Castel29.
-                L’objectif de ce travail est d’accompagner l’entreprise dans sa transformation
-                digitale. Le but est de numériser l’environnement de l’entreprise pour
-                améliorer la sécurité de ses employés mais aussi de numériser la chaîne de
-                fabrication. Actuellement, nous travaillons avec l’entreprise sur les
-                possibilités de mise en place de solutions de maintenance prédictive.
-                <br><br>
-                <b>Mot-clés :</b> Usine du futur, IoT, Capteurs, Déploiement
-                <br>
-                <b>Partenaires :</b> Castel29
-                <br>
-                <b>Rôle de l'équipe dans le projet :</b> Montage, coordination, dimensionnement,
-                réalisation
-            </p>
+    <head>
+        <meta charset="utf-8">
+        <title> index </title>
+        <link rel="stylesheet" href="./../CSS/navbar.css">
+    </head>
+    <body>
+        <nav class="navbar red-background">
+            <a class="navbar-logo" href="accueil.html" target="_blank">
+                <img src="./../images/LabISEN.png" alt="logo LabISEN">
+            </a>
+            <div class="navbar-menu red-background">
+                <a class="navbar-menu-item red-background" id="navbar-accueil" href="accueil.html" target="_blank">
+                    <img src="./../images/menu_icons/accueil_icon.svg" alt="accueil icon">
+                    <p>Accueil</p>
+                </a>
+                <div class="submenu-container">
+                    <div class="navbar-menu-item red-background" id="navbar-recherhe">
+                        <img src="./../images/menu_icons/recherche_icon.svg" alt="recherche icon">
+                        <p>Recherche</p>
+                    </div>
+                    <div class="submenu-out-of-bound">
+                        <a class="navbar-submenu-item red-background" id="navbar-thematiques" href="thematique.html" target="_blank">
+                            <p>Thematiques</p>
+                        </a>
+                        <a class="navbar-submenu-item red-background" id="navbar-plateformes" href="plateforme.html" target="_blank">
+                            <p>Plateformes</p>
+                        </a>
+                    </div>
+                </div>
+                <a class="navbar-menu-item red-background" id="navbar-membres" href="membres.html" target="_blank">
+                    <img src="./../images/menu_icons/membres_icon.svg" alt="accueil icon">
+                    <p>Membres</p>
+                </a>
+                <a class="navbar-menu-item red-background" id="navbar-projets" href="projets.html" target="_blank">
+                    <img src="./../images/menu_icons/projets_icon.svg" alt="accueil icon">
+                    <p>Projets</p>
+                </a>
+                <a class="navbar-menu-item red-background" id="navbar-publications" href="publications.html" target="_blank">
+                    <img src="./../images/menu_icons/publications_icon.svg" alt="accueil icon">
+                    <p>Publications</p>
+                </a>
+                <a class="navbar-menu-item red-background" id="navbar-partenaires" href="partenaires.html" target="_blank">
+                    <img src="./../images/menu_icons/partenaires_icon.svg" alt="accueil icon">
+                    <p>Partenaires</p>
+                </a>
+                <div class="submenu-container">
+                    <div class="navbar-menu-item red-background" id="navbar-infos-contact">
+                        <img src="./../images/menu_icons/infos_contact_icon.svg" alt="accueil icon">
+                        <p>Infos et contact</p>
+                    </div>
+                    <div class="submenu-out-of-bound">
+                        <a class="navbar-submenu-item red-background" id="navbar-contact" href="contact.html" target="_blank">
+                            <p>Contactez-nous</p>
+                        </a>
+                        <a class="navbar-submenu-item red-background" id="navbar-acces" href="plan.html" target="_blank">
+                            <p>Plan d'accès</p>
+                        </a>
+                        <a class="navbar-submenu-item red-background" id="navbar-offres" href="offres.html" target="_blank">
+                            <p>Offres d'emploi</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="projet-encours">
+            <div class="castel">
+                <p> <h2>Projets en cours</h2>
+                    <h3>CASTEL : accompagnement dans la transformation digitale</h3>
+                    <b>Description :</b> Contrat industriel en partenariat avec l’entreprise Castel29.
+                    L’objectif de ce travail est d’accompagner l’entreprise dans sa transformation
+                    digitale. Le but est de numériser l’environnement de l’entreprise pour
+                    améliorer la sécurité de ses employés mais aussi de numériser la chaîne de
+                    fabrication. Actuellement, nous travaillons avec l’entreprise sur les
+                    possibilités de mise en place de solutions de maintenance prédictive.
+                    <br><br>
+                    <b>Mot-clés :</b> Usine du futur, IoT, Capteurs, Déploiement
+                    <br>
+                    <b>Partenaires :</b> Castel29
+                    <br>
+                    <b>Rôle de l'équipe dans le projet :</b> Montage, coordination, dimensionnement,
+                    réalisation
+                </p>
+            </div>
+            <div class="visemar">
+                <p>
+                    <h3>VISEMAR  : amélioration des performances des drones autonomes sous-marins parvision</h3>
+                    <b>Description :</b> Dans le cadre du programme régional Systèmes Autonomes en
+                    Milieu Maritime (SAMM), nous collaborons avec Thales comme partenaire
+                    industriel et le Lab-STICC via le projet intitulé : « Système de VISion
+                    Embarqué pour l’amélioration de l’autonomie des drones sous-MARins »
+                    (VISEMAR). Le projet VISEMAR s’intéresse à l’amélioration des performances
+                    de fonctionnement des drones autonomes sous-marins et donc leur
+                    autonomie en embarquant un système de vision doté de fonctions
+                    d’apprentissage, d’analyse de scène, de prise de décision et de
+                    communications
+                    <br>
+                    <br>
+                    <b>Mot-clés : </b>éseaux de neurones, Intelligence embarquée, FPGA, Sous-marin
+                    <br>
+                    <b>Partenaires :</b> Région Bretagne, Thales, Lab-STICC
+                    <br>
+                    <b>Rôle de l'équipe dans le projet :</b> Montage, coordination, dimensionnement,
+                    réalisation.
+                </p>
+            </div>
+            <div class="seas">
+                <p>
+                    <h3>SEAS : Système d'Étude Autonome et de Surveillance de la faune patrimoniale en
+                    milieu protégé</h3>
+                    
+                    <b>Description :</b> Conception et développement d’un système d’étude de
+                    traitement des phoques dans l’île de Morgol
+                    <br><br>
+                    <b>Mot-clés :</b> Deep Learning, Traitement de vidéos
+                    <br>
+                    <b>Partenaires :</b> AFB, Océanopolis
+                    <br>
+                    <b>Rôle de l'équipe dans le projet :</b> dimensionnement, réalisation
+                </p>
+            </div>
         </div>
-        <div class="visemar">
+        <div class="projet-achevé">
             <p>
-                <h3>VISEMAR  : amélioration des performances des drones autonomes sous-marins parvision</h3>
-                <b>Description :</b> Dans le cadre du programme régional Systèmes Autonomes en
-                Milieu Maritime (SAMM), nous collaborons avec Thales comme partenaire
-                industriel et le Lab-STICC via le projet intitulé : « Système de VISion
-                Embarqué pour l’amélioration de l’autonomie des drones sous-MARins »
-                (VISEMAR). Le projet VISEMAR s’intéresse à l’amélioration des performances
-                de fonctionnement des drones autonomes sous-marins et donc leur
-                autonomie en embarquant un système de vision doté de fonctions
-                d’apprentissage, d’analyse de scène, de prise de décision et de
-                communications
-                <br>
-                <br>
-                <b>Mot-clés : </b>éseaux de neurones, Intelligence embarquée, FPGA, Sous-marin
-                <br>
-                <b>Partenaires :</b> Région Bretagne, Thales, Lab-STICC
-                <br>
-                <b>Rôle de l'équipe dans le projet :</b> Montage, coordination, dimensionnement,
-                réalisation.
-            </p>
-        </div>
-        <div class="seas">
-            <p>
-                <h3>SEAS : Système d'Étude Autonome et de Surveillance de la faune patrimoniale en
-                milieu protégé</h3>
-                
-                <b>Description :</b> Conception et développement d’un système d’étude de
-                traitement des phoques dans l’île de Morgol
+                <h2>Projets achevés :</h2>
+                <h3>HPeC : architectures électroniques reconfigurables dynamiquement (2019)</h3>
+                <b>Description :</b> projet ANR porté par Jean-Philippe Diguet du Lab-STICC.
+                L’objectif du projet est de démontrer l’apport des architectures
+                électroniques reconfigurables dynamiquement dans le contexte des drones
+                aériens. Un des lots du projet concerne l’implantation sur FPGA de solution
+                de détection, d’apprentissage et de suivi d’objet en temps-réel.
                 <br><br>
-                <b>Mot-clés :</b> Deep Learning, Traitement de vidéos
+                <b>Mot-clés :</b> FPGA
                 <br>
-                <b>Partenaires :</b> AFB, Océanopolis
+                <b>Partenaires :</b> Lab-STICC, Inria, GIPSA-Lab, INPIXAL, Institut Pascal
                 <br>
-                <b>Rôle de l'équipe dans le projet :</b> dimensionnement, réalisation
+                <b>Rôle de l'équipe dans le projet :</b> Conseil 
             </p>
         </div>
-    </div>
-    <div class="projet-achevé">
-        <p>
-            <h2>Projets achevés :</h2>
-            <h3>HPeC : architectures électroniques reconfigurables dynamiquement (2019)</h3>
-            <b>Description :</b> projet ANR porté par Jean-Philippe Diguet du Lab-STICC.
-            L’objectif du projet est de démontrer l’apport des architectures
-            électroniques reconfigurables dynamiquement dans le contexte des drones
-            aériens. Un des lots du projet concerne l’implantation sur FPGA de solution
-            de détection, d’apprentissage et de suivi d’objet en temps-réel.
-            <br><br>
-            <b>Mot-clés :</b> FPGA
-            <br>
-            <b>Partenaires :</b> Lab-STICC, Inria, GIPSA-Lab, INPIXAL, Institut Pascal
-            <br>
-            <b>Rôle de l'équipe dans le projet :</b> Conseil 
-        </p>
-    </div>
-</body>
+    </body>
 </html>

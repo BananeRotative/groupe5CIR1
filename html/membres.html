@@ -5,27 +5,66 @@
     <title> index </title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="/CSS/membres.css">
+    <link rel="stylesheet" href="./../CSS/navbar.css">
 </head>
 <body>
-    <nav>
-        <ul>
-                <li><a href="accueil.html">Accueil</a></li>
-                <li><a href="recherche.html">Recherche</a></li>
-                    <ul class="sous-menu1">
-                        <li>Thématiques de recherche</li>
-                        <li>Plateformes technologiques</li>
-                    </ul>
-                <li><a href="membres.html">Membres</a></li>
-                <li><a href="projets.html">Projet</a></li>
-                <li><a href="publications.html">Publication</a></li>
-                <li><a href="partenaires.html">Partenaires</a></li>
-                <li><a href="infos_contacts.html">Infos et contacts</a></li>
-                    <ul>
-                        <li>Contactez-nous</li>
-                        <li>Plan d'accès</li>
-                        <li>Offres d'emploi</li>
-                    </ul>
-        </ul>
+    <nav class="navbar red-background">
+        <a class="navbar-logo" href="accueil.html" target="_blank">
+            <img src="./../images/LabISEN.png" alt="logo LabISEN">
+        </a>
+        <div class="navbar-menu red-background">
+            <a class="navbar-menu-item red-background" id="navbar-accueil" href="accueil.html" target="_blank">
+                <img src="./../images/menu_icons/accueil_icon.svg" alt="accueil icon">
+                <p>Accueil</p>
+            </a>
+            <div class="submenu-container">
+                <div class="navbar-menu-item red-background" id="navbar-recherhe">
+                    <img src="./../images/menu_icons/recherche_icon.svg" alt="recherche icon">
+                    <p>Recherche</p>
+                </div>
+                <div class="submenu-out-of-bound">
+                    <a class="navbar-submenu-item red-background" id="navbar-thematiques" href="thematique.html" target="_blank">
+                        <p>Thematiques</p>
+                    </a>
+                    <a class="navbar-submenu-item red-background" id="navbar-plateformes" href="plateforme.html" target="_blank">
+                        <p>Plateformes</p>
+                    </a>
+                </div>
+            </div>
+            <a class="navbar-menu-item red-background" id="navbar-membres" href="membres.html" target="_blank">
+                <img src="./../images/menu_icons/membres_icon.svg" alt="accueil icon">
+                <p>Membres</p>
+            </a>
+            <a class="navbar-menu-item red-background" id="navbar-projets" href="projets.html" target="_blank">
+                <img src="./../images/menu_icons/projets_icon.svg" alt="accueil icon">
+                <p>Projets</p>
+            </a>
+            <a class="navbar-menu-item red-background" id="navbar-publications" href="publications.html" target="_blank">
+                <img src="./../images/menu_icons/publications_icon.svg" alt="accueil icon">
+                <p>Publications</p>
+            </a>
+            <a class="navbar-menu-item red-background" id="navbar-partenaires" href="partenaires.html" target="_blank">
+                <img src="./../images/menu_icons/partenaires_icon.svg" alt="accueil icon">
+                <p>Partenaires</p>
+            </a>
+            <div class="submenu-container">
+                <div class="navbar-menu-item red-background" id="navbar-infos-contact">
+                    <img src="./../images/menu_icons/infos_contact_icon.svg" alt="accueil icon">
+                    <p>Infos et contact</p>
+                </div>
+                <div class="submenu-out-of-bound">
+                    <a class="navbar-submenu-item red-background" id="navbar-contact" href="contact.html" target="_blank">
+                        <p>Contactez-nous</p>
+                    </a>
+                    <a class="navbar-submenu-item red-background" id="navbar-acces" href="plan.html" target="_blank">
+                        <p>Plan d'accès</p>
+                    </a>
+                    <a class="navbar-submenu-item red-background" id="navbar-offres" href="offres.html" target="_blank">
+                        <p>Offres d'emploi</p>
+                    </a>
+                </div>
+            </div>
+        </div>
     </nav>
 
     <div class="content">

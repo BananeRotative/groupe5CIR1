@@ -1,72 +1,132 @@
 <!DOCTYPE html>
 <html lang="fr">
- <head>
- <meta charset="utf-8">
- <title> plateforme </title>
- <link rel="icon" href="/Images/LabISEN.png">
- </head>
- <body>
-    <p>
-        <h3>Plateformes technologiques :</h3>
-        Les travaux de l’équipe débouchent souvent sur une preuve de concept, une réalisation de prototypes ou un
-        déploiement de plateformes technologiques. Ces plateformes sont à la fois un outil interne pour mener des
-        expérimentations et aussi un moyen de communication vers nos partenaires.
+    <head>
+        <meta charset="utf-8">
+        <title> plateforme </title>
+        <link rel="icon" href="/Images/LabISEN.png">
+        <link rel="stylesheet" href="./../CSS/navbar.css">
+    </head>
+    <body>
+        <nav class="navbar red-background">
+            <a class="navbar-logo" href="accueil.html" target="_blank">
+                <img src="./../images/LabISEN.png" alt="logo LabISEN">
+            </a>
+            <div class="navbar-menu red-background">
+                <a class="navbar-menu-item red-background" id="navbar-accueil" href="accueil.html" target="_blank">
+                    <img src="./../images/menu_icons/accueil_icon.svg" alt="accueil icon">
+                    <p>Accueil</p>
+                </a>
+                <div class="submenu-container">
+                    <div class="navbar-menu-item red-background" id="navbar-recherhe">
+                        <img src="./../images/menu_icons/recherche_icon.svg" alt="recherche icon">
+                        <p>Recherche</p>
+                    </div>
+                    <div class="submenu-out-of-bound">
+                        <a class="navbar-submenu-item red-background" id="navbar-thematiques" href="thematique.html" target="_blank">
+                            <p>Thematiques</p>
+                        </a>
+                        <a class="navbar-submenu-item red-background" id="navbar-plateformes" href="plateforme.html" target="_blank">
+                            <p>Plateformes</p>
+                        </a>
+                    </div>
+                </div>
+                <a class="navbar-menu-item red-background" id="navbar-membres" href="membres.html" target="_blank">
+                    <img src="./../images/menu_icons/membres_icon.svg" alt="accueil icon">
+                    <p>Membres</p>
+                </a>
+                <a class="navbar-menu-item red-background" id="navbar-projets" href="projets.html" target="_blank">
+                    <img src="./../images/menu_icons/projets_icon.svg" alt="accueil icon">
+                    <p>Projets</p>
+                </a>
+                <a class="navbar-menu-item red-background" id="navbar-publications" href="publications.html" target="_blank">
+                    <img src="./../images/menu_icons/publications_icon.svg" alt="accueil icon">
+                    <p>Publications</p>
+                </a>
+                <a class="navbar-menu-item red-background" id="navbar-partenaires" href="partenaires.html" target="_blank">
+                    <img src="./../images/menu_icons/partenaires_icon.svg" alt="accueil icon">
+                    <p>Partenaires</p>
+                </a>
+                <div class="submenu-container">
+                    <div class="navbar-menu-item red-background" id="navbar-infos-contact">
+                        <img src="./../images/menu_icons/infos_contact_icon.svg" alt="accueil icon">
+                        <p>Infos et contact</p>
+                    </div>
+                    <div class="submenu-out-of-bound">
+                        <a class="navbar-submenu-item red-background" id="navbar-contact" href="contact.html" target="_blank">
+                            <p>Contactez-nous</p>
+                        </a>
+                        <a class="navbar-submenu-item red-background" id="navbar-acces" href="plan.html" target="_blank">
+                            <p>Plan d'accès</p>
+                        </a>
+                        <a class="navbar-submenu-item red-background" id="navbar-offres" href="offres.html" target="_blank">
+                            <p>Offres d'emploi</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
         
-        <h3>Chambre connectée (Living Lab) :</h3> 
-        Le living Lab est le fruit de collaboration avec l’entreprise de
-        mutuelle santé Malakoff Médéric. Initialement, ce Living Lab avait pour but de détecter la chute des
-        personnes âgées sans utiliser de capteurs portés (bracelet, médaillon...). Une solution a été proposée
-        en utilisant un capteur de type Kinect permettant de garantir le respect de la vie privée et de
-        connaitre à chaque instant la position de la personne dans le studio. Afin d'étendre les possibilités du
-        studio, un ensemble de capteurs ont été ajoutés : prises connectées, capteurs d'environnements,
-        température, lumière, humidité, gaz..., capteurs de consommation (électricité, eau), Caméras, micro
-        et haut parleurs. 
-        <br>
-        Plusieurs scénarios ont été mis en place pour utiliser les données des différents capteurs et envoyer
-        une alarme (sms, mail) en cas de chute ou si la personne reste trop longtemps allongée sur le sol, en
-        cas de détection d'anomalie (pas suffisamment de consommation d'eau en fonction d'une
-        température trop élevée...). Ce démonstrateur permet également de visualiser les données des
-        différents capteurs en temps réel et à distance, en se connectant sur un site web.
-        Les travaux futurs en lien avec cette plateforme à développer de scénarios en conditions "réelles"
-        dans des EPHAD par exemple pour contribuer dans la prise en charge des risques liés aux personnes
-        en situation de dépendance (déshydratation, comportement, chutes...).
-        <br>
-        <h3>Environnement hybrides connectés :</h3> 
-        Cette plateforme est en cours de développement et vise à offrir
-        des services à la personne dans des environnements indoor (bureau connecté, école connectée, usine
-        connectée, …). Parmi les services, nous envisageons l’étude du comportement des personnes, la
-        détection d’anomalies et la sécurité de l’environnement. Deux enjeux majeurs sont traités : (1)
-        l’application des algorithmes d’intelligence artificielle qui prend tout son sens pour la prédiction
-        d’évènements à risque ; (2) la mise en place de moyens numériques interopérables comme une
-        architecture réseau dédiée et des technologies d’acquisition et de communications standards
-        permettant l’accès aux données et la centralisation/distribution de la prise de décision.
-        <br>
-        Pour cette plateforme nous disposons de moyens de calcul intensif comme le serveur GPU pour faire
-        du FoG computing qui présente une alternative intéressante par rapport au cloud pour des raisons de
-        sécurité de données et de coût.
-    </p>
-
-    <footer>
-        <p> <h3>Coordonnées :</h3>
-            Isen Nantes: Adresse:33 QUATER Av. du Champ de Manœuvre, 44470 Carquefou
-            <a href="tel:+02 30 13 05 60">Telephone</a> :02 30 13 05 60
+        <p>
+            <h3>Plateformes technologiques :</h3>
+            Les travaux de l’équipe débouchent souvent sur une preuve de concept, une réalisation de prototypes ou un
+            déploiement de plateformes technologiques. Ces plateformes sont à la fois un outil interne pour mener des
+            expérimentations et aussi un moyen de communication vers nos partenaires.
+            
+            <h3>Chambre connectée (Living Lab) :</h3> 
+            Le living Lab est le fruit de collaboration avec l’entreprise de
+            mutuelle santé Malakoff Médéric. Initialement, ce Living Lab avait pour but de détecter la chute des
+            personnes âgées sans utiliser de capteurs portés (bracelet, médaillon...). Une solution a été proposée
+            en utilisant un capteur de type Kinect permettant de garantir le respect de la vie privée et de
+            connaitre à chaque instant la position de la personne dans le studio. Afin d'étendre les possibilités du
+            studio, un ensemble de capteurs ont été ajoutés : prises connectées, capteurs d'environnements,
+            température, lumière, humidité, gaz..., capteurs de consommation (électricité, eau), Caméras, micro
+            et haut parleurs. 
             <br>
-            Isen Brest : Adresse : 20 Rue Cuirassé Bretagne, 29200 Brest 
-            <a href="tel:+02 98 03 84 00">Telephone</a> :02 98 03 84 00
+            Plusieurs scénarios ont été mis en place pour utiliser les données des différents capteurs et envoyer
+            une alarme (sms, mail) en cas de chute ou si la personne reste trop longtemps allongée sur le sol, en
+            cas de détection d'anomalie (pas suffisamment de consommation d'eau en fonction d'une
+            température trop élevée...). Ce démonstrateur permet également de visualiser les données des
+            différents capteurs en temps réel et à distance, en se connectant sur un site web.
+            Les travaux futurs en lien avec cette plateforme à développer de scénarios en conditions "réelles"
+            dans des EPHAD par exemple pour contribuer dans la prise en charge des risques liés aux personnes
+            en situation de dépendance (déshydratation, comportement, chutes...).
             <br>
-            Isen Caen : Adresse : 8 Av. Croix Guérin, 14000 Caen
-            <a href="tel:+02 30 31 03 20">Telephone</a> :02 30 31 03 20
+            <h3>Environnement hybrides connectés :</h3> 
+            Cette plateforme est en cours de développement et vise à offrir
+            des services à la personne dans des environnements indoor (bureau connecté, école connectée, usine
+            connectée, …). Parmi les services, nous envisageons l’étude du comportement des personnes, la
+            détection d’anomalies et la sécurité de l’environnement. Deux enjeux majeurs sont traités : (1)
+            l’application des algorithmes d’intelligence artificielle qui prend tout son sens pour la prédiction
+            d’évènements à risque ; (2) la mise en place de moyens numériques interopérables comme une
+            architecture réseau dédiée et des technologies d’acquisition et de communications standards
+            permettant l’accès aux données et la centralisation/distribution de la prise de décision.
             <br>
-            Isen Rennes : Adresse : 2 Rue Robert d'Arbrissel, 35000 Rennes
-            <a href="tel:+02 30 13 02 50">Telephone</a> :02 30 13 02 50
-
-            <h3>Développeur :</h3>
-            Mathieu Gicquel-Bourdeau
-            <br>
-            Erwan Langlais
-            <br>
-            Alexis Rochon-Sanz
+            Pour cette plateforme nous disposons de moyens de calcul intensif comme le serveur GPU pour faire
+            du FoG computing qui présente une alternative intéressante par rapport au cloud pour des raisons de
+            sécurité de données et de coût.
         </p>
-    </footer>
- </body>
+
+        <footer>
+            <p> <h3>Coordonnées :</h3>
+                Isen Nantes: Adresse:33 QUATER Av. du Champ de Manœuvre, 44470 Carquefou
+                <a href="tel:+02 30 13 05 60">Telephone</a> :02 30 13 05 60
+                <br>
+                Isen Brest : Adresse : 20 Rue Cuirassé Bretagne, 29200 Brest 
+                <a href="tel:+02 98 03 84 00">Telephone</a> :02 98 03 84 00
+                <br>
+                Isen Caen : Adresse : 8 Av. Croix Guérin, 14000 Caen
+                <a href="tel:+02 30 31 03 20">Telephone</a> :02 30 31 03 20
+                <br>
+                Isen Rennes : Adresse : 2 Rue Robert d'Arbrissel, 35000 Rennes
+                <a href="tel:+02 30 13 02 50">Telephone</a> :02 30 13 02 50
+
+                <h3>Développeur :</h3>
+                Mathieu Gicquel-Bourdeau
+                <br>
+                Erwan Langlais
+                <br>
+                Alexis Rochon-Sanz
+            </p>
+        </footer>
+    </body>
 </html>

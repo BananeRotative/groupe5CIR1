@@ -1,0 +1,106 @@
+html {
+    font-family: "Open Sans", Georgia;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.red-background {
+    background-color: #CF2E2E;
+}
+
+.navbar {
+    display: flex;
+    align-items: flex-start;
+    align-self: stretch; 
+}
+
+.navbar-logo, .navbar-logo img {
+    width: 1fr;
+    height: 6.25rem; 
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: flex-start;
+    flex: 1 0 0; 
+}
+
+.submenu-container {
+    display: inline-flex;
+    width: 1fr;
+    height: 6.25rem;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.navbar-menu-item {
+    display: flex;
+    width: 1fr;
+    height: 6.25rem;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
+}
+
+.navbar-menu-item:active, .navbar-submenu-item:active {
+    background-color: #AF2828;
+}
+
+.navbar-menu-item p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 0 0;
+    align-self: stretch; 
+
+    text-align: center; 
+    color: white;
+
+    /*Navbar menu font*/
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase; 
+}
+
+.navbar-submenu-item {
+    display: flex;
+    width: 15rem;
+    height: 6.25rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.navbar-submenu-item p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 0 0;
+    align-self: stretch; 
+
+    text-align: center;
+    color: white;
+
+    /* Navbar submenu font*/
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase; 
+}
+
+.submenu-container .submenu-out-of-bound {
+    display: none;
+}
+
+.submenu-container:hover .submenu-out-of-bound {
+    display: block;
+    position:absolute;
+    width: 100%;
+    z-index: 1000;
+}
