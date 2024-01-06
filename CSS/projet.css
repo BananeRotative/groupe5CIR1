@@ -1,0 +1,85 @@
+
+
+.castel{
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+.titre-castel{
+    color: var(--Title-color, #000);
+
+/* H3_Desktop */
+font-family: Open Sans;
+font-size: 20.74px;
+font-style: normal;
+font-weight: 650;
+line-height: normal;
+letter-spacing: 0.622px;
+}
+
+.description1{
+    align-self: stretch;
+    color: var(--Text-color, #000);
+    /* paragraph (Desktop) */
+    font-family: Open Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.16px;
+}
+
+.castel-haut{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 5px;
+flex: 1 0 0;
+align-self: stretch;
+}
+
+.Mot-cles1{color: var(--Text-color, #000);
+
+    /* paragraph (Desktop) */
+    font-family: Open Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.16px;
+}
+
+.parteneire1{ 
+    color: var(--Text-color, #000);
+
+/* paragraph (Desktop) */
+font-family: Open Sans;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 0.16px;
+}
+
+.role1{
+    color: var(--Text-color, #000);
+
+/* paragraph (Desktop) */
+font-family: Open Sans;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 0.16px;
+}
+
+
+img{
+    width: 40%;
+    height: 50%;
+}
