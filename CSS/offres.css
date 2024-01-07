@@ -1,0 +1,19 @@
+.pdf-text-line {
+    display: flex;
+    align-items: flex-start;
+    align-self: stretch; 
+}
+
+.pdf-icon, .pdf-icon svg{
+    width: 1.2rem;
+    height: 1.2rem; 
+}
+
+.pdf-icon {
+    align-self: center;
+    margin-left: 0.2rem;
+}
+
+#content > p {
+    margin-left: 1rem;
+}
