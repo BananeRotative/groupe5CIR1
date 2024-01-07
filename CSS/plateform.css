@@ -1,55 +1,34 @@
-.content{
+.plateforme-image {
+    width:25%;
+}
+
+#platformes{
     display: flex;
-    padding: 10px 20px;
+    padding: 0.625rem 0rem;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-    align-self: stretch;
+    gap: 0.625rem;
+    align-self: stretch; 
 }
 
-.room{
-    width: 200px;
-    height: auto;
+.plateforme {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    align-self: stretch; 
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
-.content-text1{display: flex;
-    padding: 10px;
+.plateform-text-container {
+    display: flex;
+    padding: 0.625rem;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-    flex: 1 0 0;
-    
+    gap: 0.625rem;
+    flex: 1 0 0; 
 }
 
-.text1{color: var(--Text-color, #000);
-
-    /* paragraph (Desktop) */
-    font-family: Open Sans;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    letter-spacing: 0.16px;
-
+#content > p {
+    margin-left: 1rem;
 }
-
-.titre1{color: var(--Text-color, #000);
-
-    /* paragraph (Desktop) */
-    font-family: Open Sans;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    letter-spacing: 0.16px;
-}
-
-.chambre{display: flex;
-    align-items: flex-start;
-    align-content: flex-start;
-    gap: 10px;
-    align-self: stretch;
-    flex-wrap: wrap;
-}
-
-.chambre2{font-family: open sans;}
