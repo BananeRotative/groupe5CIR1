@@ -1,236 +1,59 @@
-.projet{display: flex;
-    padding: 10px;
+.projets{
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    gap: 0.625rem; 
+}
+
+.etat-projets{
+    display: flex;
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
-    gap: 30px;
-    align-self: stretch;
+    gap: 1.875rem; 
 }
 
-.projet-encours{display: flex;
-    flex-direction: column;
+.project{
+    display: flex;
+    width: 100%;
     align-items: flex-start;
-    gap: 30px;
-}
-.titre-projet-encours{
-    color: var(--Title-color, #000);
-     /* H2_Desktop */
-    font-family: Open Sans;
-    font-size: 22.13px;
-    font-style: normal;
-    font-weight: 650;
-    line-height: normal;
-    letter-spacing: 0.664px;
+    gap: 0.625rem; 
 }
 
-.castel{
+.project-info{
     display: flex;
-    width: 1909px;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-.castel-haut{
-    display: flex;
-flex-direction: column;
-align-items: flex-start;
-gap: 5px;
-flex: 1 0 0;
-align-self: stretch;
-}
-
-.castel-bas{
-    display: flex;
-flex-direction: column;
-align-items: flex-start;
-gap: 5px;
-align-self: stretch;
-}
-
-.text-castel{display: flex;
-    padding: 10px;
+    padding: 0.625rem;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     flex: 1 0 0;
-    align-self: stretch;
+    align-self: stretch; 
+    width: 2fr;
 }
 
-.titre-castel{
-    color: var(--Title-color, #000);
-    /* H3_Desktop */
-    font-family: Open Sans;
-    font-size: 20.74px;
-    font-style: normal;
-    font-weight: 650;
-    line-height: normal;
-    letter-spacing: 0.622px;
+.project-info-top{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3125rem;
+    flex: 1 0 0;
+    align-self: stretch; 
 }
 
-.description1{
-    color: var(--Text-color, #000);
-
-    /* bold (Desktop) */
-    font-family: Open Sans;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 650;
-    line-height: normal;
-    letter-spacing: 0.16px;
+.project-info-bot{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3125rem;
+    align-self: stretch; 
 }
 
-
-.Mot-cles1{color: var(--Text-color, #000);
-
-    /* paragraph (Desktop) */
-    font-family: Open Sans;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    letter-spacing: 0.16px;
-}
-
-.parteneire1{ 
-    color: var(--Text-color, #000);
-
-/* paragraph (Desktop) */
-font-family: Open Sans;
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-letter-spacing: 0.16px;
-}
-
-.role1{
-    color: var(--Text-color, #000);
-
-/* paragraph (Desktop) */
-font-family: Open Sans;
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-letter-spacing: 0.16px;
-}
-
-.castel-image{
-    width: 300px;
-    height: auto;
+.project-image{
+    width: 25%;
     flex-shrink: 0;
+    align-self: center;
 }
 
-
-/*visemar*/
-
-.visemar{display: flex;
-    width: 1910px;
-    align-items: flex-start;
-    gap: 10px;
+hr {
+    width: 96%;
 }
-
-.text-visemar{display: flex;
-    padding: 10px;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex: 1 0 0;
-    align-self: stretch;
-}
-
-.text-haut2{display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-    flex: 1 0 0;
-    align-self: stretch;
-}
-
-.text-bas2{display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-    align-self: stretch;
-}
-
-.image-visemar{
-    width: 300px;
-    height: auto;
-}
-
-.visemar-titre{color: var(--Title-color, #000);
-
-    /* H3_Desktop */
-    font-family: Open Sans;
-    font-size: 20.74px;
-    font-style: normal;
-    font-weight: 650;
-    line-height: normal;
-    letter-spacing: 0.622px;
-}
-
-.description2{
-    color: var(--Text-color, #000);
-
-/* paragraph (Desktop) */
-font-family: Open Sans;
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-letter-spacing: 0.16px;
-}
-
-.mot-cle2{
-    color: var(--Text-color, #000);
-
-/* paragraph (Desktop) */
-font-family: Open Sans;
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-letter-spacing: 0.16px;
-}
-
-.parteneire2{
-    color: var(--Text-color, #000);
-
-/* paragraph (Desktop) */
-font-family: Open Sans;
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-letter-spacing: 0.16px;
-}
-
-.role2{
-    color: var(--Text-color, #000);
-
-/* paragraph (Desktop) */
-font-family: Open Sans;
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-letter-spacing: 0.16px;
-}
-
-/*Seas*/
-
-.ses{
-    display: flex;
-width: 1909px;
-align-items: flex-start;
-gap: 10px;
-}
-
-.image-seas{
-    width: 300px;
-    height: auto;
-}
-
-
-
-
