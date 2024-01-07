@@ -20,7 +20,7 @@ h3 {
     font-size: 1.2rem;
 }
 
-p, a {
+p, a, .text-element{
     font-size: 0.8rem;
 }
 

@@ -5,6 +5,7 @@
         <title> index </title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
         <link rel="stylesheet" href="./../CSS/navbar.css">
+        <link rel="stylesheet" href="./../CSS/contact.css">
     </head>
     <body>
         <nav class="navbar red-background">
@@ -66,24 +67,34 @@
             </div>
         </nav>
 
-        <h3>Contectez le responsable de l'equipe</h3>
-        <p>(Maher jridi - maher.jridi@isen-ouest.yncrea.fr)</p>
+        <div id="content">
+            <h1>Contectez le responsable de l'equipe</h1>
+            <h2>(Maher jridi - maher.jridi@isen-ouest.yncrea.fr)</h2>
 
-        <form action="/html/contact.html" method="post">
-            <div>
-                <span class="material-symbols-outlined">person</span> <input type="text" name="prenom" id="prenom" placeholder="Prenom Nom">
-            </div>
-            <br>
-            <div>
-                <span class="material-symbols-outlined">alternate_email</span><input type="text" name="email" id="email" placeholder="email@exemple.com">
-            </div>
-            <br>
-            <div>
-            <textarea name="commentaire" id="com" cols="30" rows="10" placeholder="Votre message (1000 caractere maximum)"></textarea>
-            </div>
-            <p><input type="submit"></p>
+            <form action="/html/contact.html" method="post" id="contact-form">
+                <div id="contact-name">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 55 54" fill="none">
+                            <rect x="0.5" y="0.5" width="54" height="53" fill="#C0C0C0"/>
+                            <path d="M27.5 25C29.6217 25 31.6566 24.1571 33.1569 22.6569C34.6572 21.1566 35.5 19.1217 35.5 17C35.5 14.8783 34.6572 12.8434 33.1569 11.3431C31.6566 9.84285 29.6217 9 27.5 9C25.3783 9 23.3434 9.84285 21.8431 11.3431C20.3429 12.8434 19.5 14.8783 19.5 17C19.5 19.1217 20.3429 21.1566 21.8431 22.6569C23.3434 24.1571 25.3783 25 27.5 25ZM24.6438 28C18.4875 28 13.5 32.9875 13.5 39.1437C13.5 40.1687 14.3313 41 15.3563 41H39.6438C40.6688 41 41.5 40.1687 41.5 39.1437C41.5 32.9875 36.5125 28 30.3563 28H24.6438Z" fill="black"/>
+                        </svg> 
+                    </div>
+                    <input type="text" name="prenom" id="contact-name-field" placeholder="Prénom Nom">
+                </div>
+                <div id="contact-mail">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 55 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0.5" y="0.5" width="54" height="53" fill="#C0C0C0"/>
+                            <path d="M27.5 13C20.875 13 15.5 18.375 15.5 25C15.5 31.625 20.875 37 27.5 37C28.6063 37 29.5 37.8937 29.5 39C29.5 40.1063 28.6063 41 27.5 41C18.6625 41 11.5 33.8375 11.5 25C11.5 16.1625 18.6625 9 27.5 9C36.3375 9 43.5 16.1625 43.5 25V27C43.5 30.3125 40.8125 33 37.5 33C35.6688 33 34.025 32.175 32.925 30.8813C31.5 32.1938 29.5938 33 27.5 33C23.0813 33 19.5 29.4188 19.5 25C19.5 20.5813 23.0813 17 27.5 17C29.2437 17 30.8563 17.5563 32.1688 18.5063C32.525 18.1938 32.9875 18 33.5 18C34.6063 18 35.5 18.8938 35.5 20V25V27C35.5 28.1063 36.3937 29 37.5 29C38.6063 29 39.5 28.1063 39.5 27V25C39.5 18.375 34.125 13 27.5 13ZM31.5 25C31.5 23.9391 31.0786 22.9217 30.3284 22.1716C29.5783 21.4214 28.5609 21 27.5 21C26.4391 21 25.4217 21.4214 24.6716 22.1716C23.9214 22.9217 23.5 23.9391 23.5 25C23.5 26.0609 23.9214 27.0783 24.6716 27.8284C25.4217 28.5786 26.4391 29 27.5 29C28.5609 29 29.5783 28.5786 30.3284 27.8284C31.0786 27.0783 31.5 26.0609 31.5 25Z" fill="black"/>
+                        </svg> 
+                    </div>
+                    <input type="text" name="email" id="contact-email-field" placeholder="email@exemple.com">
+                </div>
+                <textarea name="commentaire" id="contact-comment" cols="30" rows="10" placeholder="Votre message (1000 caractere maximum)"></textarea>
+                <input type="submit" value="Envoyer" id="contact-submit-button" class="text-element">
+            </form>
+        </div>
 
-        </form>
         <footer class="red-background">
             <div id="footer-coordonnees">
                 <h3 class="footer-title">Coordonnées</h3>
