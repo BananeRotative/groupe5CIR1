@@ -1,4 +1,11 @@
-.content{
-    margin: 1em;
+.plan-subsection {
+    margin-left: 1rem;
 }
 
+.plan-subsection p {
+    margin-left: 1rem;
+}
+
+.plan-section > p {
+    margin-left: 1rem;
+}
