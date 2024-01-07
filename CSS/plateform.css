@@ -1,0 +1,55 @@
+.content{
+    display: flex;
+    padding: 10px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+}
+
+.room{
+    width: 200px;
+    height: auto;
+}
+
+.content-text1{display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1 0 0;
+    
+}
+
+.text1{color: var(--Text-color, #000);
+
+    /* paragraph (Desktop) */
+    font-family: Open Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.16px;
+
+}
+
+.titre1{color: var(--Text-color, #000);
+
+    /* paragraph (Desktop) */
+    font-family: Open Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.16px;
+}
+
+.chambre{display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    flex-wrap: wrap;
+}
+
+.chambre2{font-family: open sans;}
