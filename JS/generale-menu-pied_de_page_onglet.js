@@ -1,5 +1,19 @@
 // ------- CLOCK -------
 
+let digitIDs = [
+    "clock-current-hours-tens",
+    "clock-current-hours-units",
+    "clock-current-minutes-tens",
+    "clock-current-minutes-units",
+    "clock-time-on-page-minutes-tens",
+    "clock-time-on-page-minutes-units",
+    "clock-time-on-page-seconds-tens",
+    "clock-time-on-page-seconds-units"
+];
+
+// Date on page loading
+let initialDate;
+
 function addSegments(digitId){
     // Get digit html element
     let digit = document.getElementById(digitId);
@@ -49,7 +63,6 @@ function updateDigit(digitId, value){
 
 function updateTime() {
     let date = new Date();
-    let digitIDs = ["hours-tens", "hours-units", "minutes-tens", "minutes-units"];
 
     // Update hours tens
     let hours = date.getHours();
@@ -66,14 +79,40 @@ function updateTime() {
     // Update minutes tens
     let minutes = date.getMinutes();
     if (minutes >= 10) {
-        updateDigit(digitIDs[2], (minutes - minutes%10)/10);
+        updateDigit(digitIDs[2], (minutes - minutes%10)/10);        // Current time
     }
     else {
-        updateDigit(digitIDs[2], 0);
+        updateDigit(digitIDs[2], 0);    // Current time
     }
 
     // Update minutes units
     updateDigit(digitIDs[3], minutes%10);
+}
+
+function updateTimeOnPage() {
+    let currentDate = new Date();
+    let timeOnPage = currentDate-initialDate;
+    // Update minutes tens
+    let minutes = Math.floor(timeOnPage/60000);
+    if (minutes >= 10) {
+        updateDigit(digitIDs[4], (minutes - minutes%10)/10);
+    }
+    else {
+        updateDigit(digitIDs[4], 0);
+    }
+    // Update minutes units
+    updateDigit(digitIDs[5], minutes%10);
+
+    // Update seconds tens
+    let seconds = Math.floor(timeOnPage/1000) - 60*minutes;
+    if (seconds >= 10) {
+        updateDigit(digitIDs[6], (seconds - seconds%10)/10);
+    }
+    else {
+        updateDigit(digitIDs[6], 0);
+    }
+    // Update seconds units
+    updateDigit(digitIDs[7], seconds%10);
 }
 
 function updateTimeInit() {
@@ -84,13 +123,19 @@ function updateTimeInit() {
 }
 
 function setColonOn() {
-    let colonHTML = document.getElementById("colon");
-    colonHTML.classList.remove("segmentOff");  // Remove off state
+    let colonsHTML = document.getElementsByClassName("colon");
+    Array.from(colonsHTML)
+        .forEach(function (element) {
+            element.classList.remove("segmentOff");  // Remove off state
+        });
 }
 
 function setColonOff() {
-    let colonHTML = document.getElementById("colon");
-    colonHTML.classList.add("segmentOff");     // Set off state
+    let colonsHTML = document.getElementsByClassName("colon");
+    Array.from(colonsHTML)
+        .forEach( function (element) {
+            element.classList.add("segmentOff");     // Set off state
+        });
 }
 
 function initRoutineColonOff() {
@@ -103,30 +148,32 @@ function initRoutineColonOn() {
     setInterval(setColonOn, 2000);  // Set colon on every 2 seconds
 }
 
-function updateColonInit() {
+function updateSecondsInit() {
     // Call this function to init colon animation
     initRoutineColonOn();
     setTimeout(initRoutineColonOff, 1000);  // Delay colon off animation by 1 second
+
+    // Init time on page actualisations for seconds
+    initialDate = new Date();
+    updateTimeOnPage();
+    setInterval(updateTimeOnPage, 1000);
 }
 
 
 function initClock(){
-    
-    let digitIDs = ["hours-tens", "hours-units", "minutes-tens", "minutes-units"];
-
     for (digitID of digitIDs) {
         // Add segments for the 4 digits
         addSegments(digitID);
     }
 
-    // // Prepare for time updates
+    // Prepare for time updates
     updateTime();
     let date = new Date();
     // Wait for the next minute update to call initialization
     setTimeout(updateTimeInit, 60000 -date.getSeconds()*1000 -date.getMilliseconds());
 
     // Prepare for colon updates
-    setTimeout(updateColonInit, 1000 -date.getMilliseconds());
+    setTimeout(updateSecondsInit, 1000 -date.getMilliseconds());
 }
 
 function main() {
