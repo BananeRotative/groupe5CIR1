@@ -176,7 +176,19 @@ function initClock(){
     setTimeout(updateSecondsInit, 1000 -date.getMilliseconds());
 }
 
+/*
+function printInputError(event){
+    let inputId = event.target;
+    console.error("La saisie de l'id" + inputId + "est erronée.");
+}
+
+function verif_input(inputId){
+    let input = document.getElementById("inputId");
+    input.addEventListener("load",printInputError);
+}
+*/
 function main() {
+    //verif_input();
     initClock();
 }
 
