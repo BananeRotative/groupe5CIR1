@@ -187,6 +187,13 @@ function verif_input(inputId){
     input.addEventListener("load",printInputError);
 }
 */
+function redirectToHomepage(event){
+    document.location = "./../html/accueil.html";
+}
+function clickedOnLogo(){
+    let logo = document.images[0];
+    logo.addEventListener("click", redirectToHomepage);
+}
 function main() {
     //verif_input();
     initClock();
