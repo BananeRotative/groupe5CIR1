@@ -20,3 +20,11 @@
     flex-direction: column;
     /* overflow: hidden; */     /*Utile si on veut suivre la position de la souris*/
 }
+
+#text-animation {
+    font-size: 2rem;
+    width: fit-content;
+    color: red;
+    position: relative;
+    left: 0%;
+}
