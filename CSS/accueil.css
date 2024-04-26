@@ -11,5 +11,12 @@
 }
 
 #accueil-competences {
-    width: 100%;
+    width: 50%;
+    align-self: center;
+}
+
+#accueil-section-competences {
+    display: flex;
+    flex-direction: column;
+    /* overflow: hidden; */     /*Utile si on veut suivre la position de la souris*/
 }
