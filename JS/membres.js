@@ -70,17 +70,14 @@ function activateCardScratching() {
 
 // ------ MODE ÉDITION ------
 
-function activateEditMode() {
-
-}
 
 function promptAdmin() {
     let admin_username = "admin";
     let admin_password = "admin_pwd";
 
-    let user_input = prompt("Entrez le nom du profil administrateur.");
+    let user_input = prompt("Entrez le nom du profil administrateur. (spoiler c'est admin)");
     if (user_input == admin_username) {
-        user_input = prompt("Entrez le mot de passe du profil administrateur.");
+        user_input = prompt("Entrez le mot de passe du profil administrateur. (spoiler c'est admin_pwd)");
         if (user_input == admin_password) {
             activateEditMode();
         }
@@ -91,6 +88,33 @@ function promptAdmin() {
     else {
         console.error("Le nom du profil administrateur est incorrect.");
     }
+}
+
+function alertQuitEditMode() {
+    let user_input = confirm("Souhaitez-vous quitter le mode édition ?");
+    if (user_input) {
+        unactivateEditMode();
+    }
+}
+
+function activateEditMode() {
+    let button = document.getElementById("edit-mode-button");
+
+    button.classList.add("filter-red");     // Change color to red
+    button.removeEventListener("click", promptAdmin);       // remove old button event
+
+
+    button.addEventListener("click", alertQuitEditMode);    // Set new button event
+}
+
+function unactivateEditMode() {
+    let button = document.getElementById("edit-mode-button");
+
+    button.classList.remove("filter-red");      // Reset color
+    button.removeEventListener("click", alertQuitEditMode);     // remove old button event
+
+
+    button.addEventListener("click", promptAdmin);          // set new button event
 }
 
 function setupEditModeButton() {

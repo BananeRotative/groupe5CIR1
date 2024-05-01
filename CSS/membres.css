@@ -139,3 +139,7 @@
 
     height: 1.5rem;
 }
+
+.filter-red {
+    filter: invert(21%) sepia(42%) saturate(3909%) hue-rotate(341deg) brightness(91%) contrast(95%);
+}
