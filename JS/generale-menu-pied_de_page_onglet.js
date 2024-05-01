@@ -196,13 +196,13 @@ function clickedOnLogo(){
 }
 //plagiat
 function antiplagiat(){
-    alert("Le plagiat est tout simplement l'appropriation illégitime de travaux ou d'idées attribués à d'autres personnes");
+    console.log("Le plagiat est tout simplement l'appropriation illégitime de travaux ou d'idées attribués à d'autres personnes");
  }
  
  function addeventplagiat(){
     //selectionne tous les elements 
       let all=document.querySelectorAll('*');
- 
+        // fais apparaitre un message quand on copie un element
       Array.from(all).forEach(function(element){
          element.addEventListener("copy",antiplagiat);
       });
@@ -217,7 +217,7 @@ function antiplagiat(){
         var tousLesLiens = document.querySelectorAll('a');
         var loaderContainer = document.getElementById('loader-container');
     
-        // Parcourir tous les liens et ajoute un gestionnaire d'événements de clic à chacun
+        // Parcourir tous les liens et ajoute un gestionnaire d'événements de clic
         tousLesLiens.forEach(function(lien) { 
             lien.addEventListener('click', function(event) {
                 event.preventDefault();
@@ -244,15 +244,60 @@ function antiplagiat(){
         // Demander à l'utilisateur de confirmer son choix
         var confirmation = confirm("Êtes-vous sûr de vouloir naviguer vers la page des membres ?");
     
-        // Si l'utilisateur clique sur "OK" dans la boîte de dialogue de confirmation
+        // Si l'utilisateur clique sur "OK"
         if (confirmation) {
             // Rediriger vers la page des membres
             window.location.href = "membres.html";
         } else {
-            // Si l'utilisateur clique sur "Annuler" dans la boîte de dialogue, ne rien faire
+            // Si l'utilisateur clique sur "Annuler"ne rien faire
             return false;
         }
-    }
+}
+
+function telephone(){
+    document.addEventListener('DOMContentLoaded', function() {
+        var numerosTelephone = document.getElementsByClassName("footer-phone")
+    
+        Array.from(numerosTelephone).forEach(function(numero) {
+            numero.addEventListener('copy', function(event) {
+                // Empêcher le comportement par défaut de la copie
+                event.preventDefault();
+    
+                // Récupérer le numéro de téléphone copié
+                var numeroCopie = window.getSelection().toString();
+    
+                // Afficher le message prompt avec le numéro copié
+                var confirmation = prompt("Si vous voulez appeler ce numéro : " + numeroCopie + ", entrez-le de nouveau dans le champ ci-dessous puis validez :");
+                
+                // Vérifier si l'utilisateur a entré le numéro correctement
+                if (confirmation === numeroCopie) {
+                    // Afficher le message dans la console
+                    console.log("Vous appelez ce numéro : " + numeroCopie);
+    
+                    // Jouer la sonnerie pendant 5 secondes
+                    jouerSonnerie();
+                } else {
+                    alert("Le numéro saisi ne correspond pas au numéro copié. Veuillez réessayer.");
+                }
+            });
+        });
+        
+    
+        function jouerSonnerie() {
+            // Créer un contexte audio
+            var sonnerie = new Audio('../sonnerie.mp3'); 
+            
+            // Demarrer sonnerie
+            sonnerie.play();
+    
+            // Arreter le bruit apres 5 secondes
+            setTimeout(function() {
+                sonnerie.pause();
+                sonnerie.currentTime=0; // on remet le temps a zero
+            }, 5000); // 5000 millisecondes = 5 secondes
+        }
+    });
+}
     
     
 
@@ -261,6 +306,7 @@ function main() {
     initClock();
     addeventplagiat();
     Delay();
+    telephone();
 }
 
 main();
