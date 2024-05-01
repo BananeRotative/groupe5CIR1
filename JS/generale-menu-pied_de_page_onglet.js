@@ -194,9 +194,33 @@ function clickedOnLogo(){
     let logo = document.images[0];
     logo.addEventListener("click", redirectToHomepage);
 }
+//plagiat
+function antiplagiat(){
+    alert("Le plagiat est tout simplement l'appropriation illégitime de travaux ou d'idées attribués à d'autres personnes");
+ }
+ 
+ function addeventplagiat(){
+ 
+      let all=document.querySelectorAll('*');
+ 
+      Array.from(all).forEach(function(element){
+         element.addEventListener("copy",antiplagiat);
+      });
+      
+      let image= document.getElementById('accueil-competences');
+      
+      Array.from(image).forEach(function(element){
+      element.addEventListener('contextmenu', antiplagiat);
+         e.preventDefault();
+      });
+     
+      
+ }
+
 function main() {
     //verif_input();
     initClock();
+    addeventplagiat();
 }
 
 main();
