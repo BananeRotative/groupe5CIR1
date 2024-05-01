@@ -208,7 +208,7 @@ function antiplagiat(){
       });
       
       //image marche pas 
-
+}
      
     }
     

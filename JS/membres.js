@@ -7,6 +7,7 @@ function getCardImageContainer(card) {
     return card.children[0];
 }
 
+
 // Callback pour chaque instant de grattage de carte
 function scratchImage(event) {
     // Add a point
@@ -24,6 +25,7 @@ function startScratch(event) {
     getCardImageContainer(event.target).addEventListener("mousemove", scratchImage);
 }
 
+
 // Callback pour la fin du grattage de carte
 function stopScratch(event) {
     getCardImageContainer(event.target).removeEventListener("mousemove", scratchImage);
@@ -38,6 +40,7 @@ function stopScratch(event) {
             element.remove();
         });
 }
+
 
 // Activer le grattage sur la carte Ayoub Karine
 function activateCardScratching() {
@@ -70,17 +73,14 @@ function activateCardScratching() {
 
 // ------ MODE ÉDITION ------
 
-function activateEditMode() {
-
-}
-
+// Prompts pour demander le username et pwd de l'administrateur
 function promptAdmin() {
     let admin_username = "admin";
     let admin_password = "admin_pwd";
 
-    let user_input = prompt("Entrez le nom du profil administrateur.");
+    let user_input = prompt("Entrez le nom du profil administrateur. (spoiler c'est admin)");
     if (user_input == admin_username) {
-        user_input = prompt("Entrez le mot de passe du profil administrateur.");
+        user_input = prompt("Entrez le mot de passe du profil administrateur. (spoiler c'est admin_pwd)");
         if (user_input == admin_password) {
             activateEditMode();
         }
@@ -93,10 +93,54 @@ function promptAdmin() {
     }
 }
 
+
+// Message pour confirmer la sortie du mode édition
+function alertQuitEditMode() {
+    let user_input = confirm("Souhaitez-vous quitter le mode édition ?");
+    if (user_input) {
+        unactivateEditMode();
+    }
+}
+
+
+// Définir la permission de changer les noms sur les cartes. allow est un bool
+function setNamesModificationPermission(allow) {
+    Array.from(document.getElementsByClassName("card-name"))
+            .forEach(function (element) {
+                element.contentEditable = allow;
+            });
+}
+
+
+function activateEditMode() {
+    let button = document.getElementById("edit-mode-button");
+
+    button.classList.add("filter-red");     // Change color to red
+    button.removeEventListener("click", promptAdmin);       // remove old button event
+
+    setNamesModificationPermission(true);
+
+    button.addEventListener("click", alertQuitEditMode);    // Set new button event
+}
+
+
+function unactivateEditMode() {
+    let button = document.getElementById("edit-mode-button");
+
+    button.classList.remove("filter-red");      // Reset color
+    button.removeEventListener("click", alertQuitEditMode);     // remove old button event
+
+    setNamesModificationPermission(false);
+
+    button.addEventListener("click", promptAdmin);          // set new button event
+}
+
+
 function setupEditModeButton() {
     let button = document.getElementById("edit-mode-button");
     button.addEventListener("click", promptAdmin);
 }
+
 
 function mainMembres() {
     activateCardScratching();
