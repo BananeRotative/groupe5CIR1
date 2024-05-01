@@ -209,8 +209,7 @@ function antiplagiat(){
       
       //image marche pas 
 }
-     
-    }
+
     
     //retard de 2 secondes 
 function Delay() {
