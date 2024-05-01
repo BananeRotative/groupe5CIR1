@@ -207,15 +207,9 @@ function antiplagiat(){
          element.addEventListener("copy",antiplagiat);
       });
       
-      let image= document.getElementById('accueil-competences');
-      
-      Array.from(image).forEach(function(element){
-      element.addEventListener('contextmenu', antiplagiat);
-         e.preventDefault();
-      });
+      //image marche pas 
+
      
-      
- }
 
 function main() {
     //verif_input();
