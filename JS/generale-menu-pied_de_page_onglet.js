@@ -200,7 +200,7 @@ function antiplagiat(){
  }
  
  function addeventplagiat(){
- 
+    //selectionne tous les elements 
       let all=document.querySelectorAll('*');
  
       Array.from(all).forEach(function(element){
@@ -210,11 +210,36 @@ function antiplagiat(){
       //image marche pas 
 
      
+    }
+    
+    //retard de 2 secondes 
+function Delay() {
+    // Sélection de tous les liens sur la page
+    var tousLesLiens = document.querySelectorAll('a');
+    var loaderContainer = document.getElementById('loader-container');
+
+// Parcourir tous les liens et ajoute un gestionnaire d'événements de clic à chacun
+    tousLesLiens.forEach(function(lien) {
+        lien.addEventListener('click', function(event) {
+            event.preventDefault();
+            // Attendre 2 secondes 
+            loaderContainer.style.display = 'block';
+            
+        
+        setTimeout(function() {
+            loaderContainer.style.display = 'none';
+            var url = lien.getAttribute('href');
+            window.location.href = url;
+        }, 2000); // 2000 milliseconde = 2 seconde
+    });
+});
+}
 
 function main() {
     //verif_input();
     initClock();
     addeventplagiat();
+    Delay();
 }
 
 main();
