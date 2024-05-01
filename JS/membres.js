@@ -55,7 +55,11 @@ function activateCardScratching() {
                     return element.classList.contains("card-name") && element.innerText == "Ayoub Karine";
                 });
             return corresponding.length > 0;
-    })[0];
+    });
+    if (card.length == 0) {
+        return;
+    }
+    card = card[0];
 
     // Ajout de la texture à gratter et de son masque
     let image_container = getCardImageContainer(card);
@@ -102,12 +106,40 @@ function alertQuitEditMode() {
     }
 }
 
+// Supprimer la carte spécifiée
+function deleteCard(event) {
+    let user_input = confirm("Voulez-vous supprimer cette carte ?");
+    if (user_input) {
+        event.target.parentNode.remove();
+    }
+}
+
 
 // Définir la permission de changer les noms sur les cartes. allow est un bool
 function setNamesModificationPermission(allow) {
     Array.from(document.getElementsByClassName("card-name"))
             .forEach(function (element) {
                 element.contentEditable = allow;
+            });
+}
+
+function addCardDeleteButtons() {
+    Array.from(document.getElementsByClassName("card"))
+            .forEach(function(cardElement) {
+                let deleteIcon = document.createElement("img");
+                deleteIcon.src = "./../images/delete-icon.svg";
+                deleteIcon.classList.add("filter-red", "card-deletor");
+                deleteIcon.style.alignSelf = "last baseline";
+                deleteIcon.style.margin = "3px";
+                deleteIcon.addEventListener("click", deleteCard);
+                cardElement.appendChild(deleteIcon);
+            });
+}
+
+function removeCardDeleteButtons() {
+    Array.from(document.getElementsByClassName("card-deletor"))
+            .forEach(function(element) {
+                element.remove();
             });
 }
 
@@ -119,6 +151,7 @@ function activateEditMode() {
     button.removeEventListener("click", promptAdmin);       // remove old button event
 
     setNamesModificationPermission(true);
+    addCardDeleteButtons();
 
     button.addEventListener("click", alertQuitEditMode);    // Set new button event
 }
@@ -131,6 +164,7 @@ function unactivateEditMode() {
     button.removeEventListener("click", alertQuitEditMode);     // remove old button event
 
     setNamesModificationPermission(false);
+    removeCardDeleteButtons();
 
     button.addEventListener("click", promptAdmin);          // set new button event
 }
