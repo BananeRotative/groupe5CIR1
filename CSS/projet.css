@@ -57,3 +57,20 @@
 hr {
     width: 96%;
 }
+
+/*js button fleche*/
+#btnRemonter {
+    width: 40px;
+    height: 40px; 
+    background-color: #007bff; 
+    border: none; 
+    border-radius: 50%; 
+    color: white; 
+    font-size: 24px; 
+    cursor: pointer;
+}
+
+/* Style pour la flèche vers le haut */
+.fleche-vers-haut::before {
+    content: '\25B2'; 
+}

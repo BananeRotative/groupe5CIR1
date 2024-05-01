@@ -271,7 +271,7 @@ function telephone(){
                 
                 // Vérifier si l'utilisateur a entré le numéro correctement
                 if (confirmation === numeroCopie) {
-                    // Afficher le message dans la console
+                    // Affiche le message dans la console
                     console.log("Vous appelez ce numéro : " + numeroCopie);
     
                     // Jouer la sonnerie pendant 5 secondes
