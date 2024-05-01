@@ -212,27 +212,49 @@ function antiplagiat(){
 
     
     //retard de 2 secondes 
-function Delay() {
-    // Sélection de tous les liens sur la page
-    var tousLesLiens = document.querySelectorAll('a');
-    var loaderContainer = document.getElementById('loader-container');
-
-// Parcourir tous les liens et ajoute un gestionnaire d'événements de clic à chacun
-    tousLesLiens.forEach(function(lien) {
-        lien.addEventListener('click', function(event) {
-            event.preventDefault();
-            // Attendre 2 secondes 
-            loaderContainer.style.display = 'block';
-            
-        
-        setTimeout(function() {
-            loaderContainer.style.display = 'none';
-            var url = lien.getAttribute('href');
-            window.location.href = url;
-        }, 2000); // 2000 milliseconde = 2 seconde
-    });
-});
-}
+    function Delay() {
+        // Sélection de tous les liens sur la page
+        var tousLesLiens = document.querySelectorAll('a');
+        var loaderContainer = document.getElementById('loader-container');
+    
+        // Parcourir tous les liens et ajoute un gestionnaire d'événements de clic à chacun
+        tousLesLiens.forEach(function(lien) { 
+            lien.addEventListener('click', function(event) {
+                event.preventDefault();
+                // Attendre 2 secondes 
+                loaderContainer.style.display = 'block';
+    
+                setTimeout(function() {
+                    loaderContainer.style.display = 'none';
+                    var url = lien.getAttribute('href');
+                    // Vérifier si le lien pointe vers la page "Membres"
+                    if (url.includes('membres.html')) {
+                        // Afficher la popup de confirmation uniquement pour la page "Membres"
+                        popup();
+                    } else {
+                        // Rediriger vers l'URL du lien
+                        window.location.href = url;
+                    }
+                }, 2000); // 2000 millisecondes = 2 secondes
+            });
+        });
+    }
+    
+    function popup(){
+        // Demander à l'utilisateur de confirmer son choix
+        var confirmation = confirm("Êtes-vous sûr de vouloir naviguer vers la page des membres ?");
+    
+        // Si l'utilisateur clique sur "OK" dans la boîte de dialogue de confirmation
+        if (confirmation) {
+            // Rediriger vers la page des membres
+            window.location.href = "membres.html";
+        } else {
+            // Si l'utilisateur clique sur "Annuler" dans la boîte de dialogue, ne rien faire
+            return false;
+        }
+    }
+    
+    
 
 function main() {
     //verif_input();
