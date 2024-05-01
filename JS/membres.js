@@ -68,8 +68,39 @@ function activateCardScratching() {
 }
 
 
+// ------ MODE ÉDITION ------
+
+function activateEditMode() {
+
+}
+
+function promptAdmin() {
+    let admin_username = "admin";
+    let admin_password = "admin_pwd";
+
+    let user_input = prompt("Entrez le nom du profil administrateur.");
+    if (user_input == admin_username) {
+        user_input = prompt("Entrez le mot de passe du profil administrateur.");
+        if (user_input == admin_password) {
+            activateEditMode();
+        }
+        else {
+            console.error("Le mot de passe administrateur est incorrect");
+        }
+    }
+    else {
+        console.error("Le nom du profil administrateur est incorrect.");
+    }
+}
+
+function setupEditModeButton() {
+    let button = document.getElementById("edit-mode-button");
+    button.addEventListener("click", promptAdmin);
+}
+
 function mainMembres() {
     activateCardScratching();
+    setupEditModeButton();
 }
 
 mainMembres();

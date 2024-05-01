@@ -190,6 +190,10 @@ footer h3 {
     text-decoration: none;
 }
 
+.align-line {
+    display: flex;
+    justify-content: space-between;
+}
 
 /* ------- CLOCK ------- */
 
