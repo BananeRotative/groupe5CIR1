@@ -35,7 +35,6 @@ function changement_image(){
     });
 }
 
-
 function main(){
     fleche();
     changement_image();

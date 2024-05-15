@@ -55,7 +55,11 @@ function activateCardScratching() {
                     return element.classList.contains("card-name") && element.innerText == "Ayoub Karine";
                 });
             return corresponding.length > 0;
-    })[0];
+    });
+    if (card.length == 0) {
+        return;
+    }
+    card = card[0];
 
     // Ajout de la texture à gratter et de son masque
     let image_container = getCardImageContainer(card);
@@ -71,7 +75,9 @@ function activateCardScratching() {
 }
 
 
-// ------ MODE ÉDITION ------
+
+// --------- MODE ÉDITION ---------
+
 
 // Prompts pour demander le username et pwd de l'administrateur
 function promptAdmin() {
@@ -102,6 +108,13 @@ function alertQuitEditMode() {
     }
 }
 
+// Supprimer la carte spécifiée
+function deleteCard(event) {
+    let user_input = confirm("Voulez-vous supprimer cette carte ?");
+    if (user_input) {
+        event.target.parentNode.remove();
+    }
+}
 
 // Définir la permission de changer les noms sur les cartes. allow est un bool
 function setNamesModificationPermission(allow) {
@@ -111,7 +124,114 @@ function setNamesModificationPermission(allow) {
             });
 }
 
+// Ajouter un bouton pour supprimer une carte
+function addCardDeleteButton(cardElement) {
+    let deleteIcon = document.createElement("img");
+    deleteIcon.src = "./../images/delete-icon.svg";
+    deleteIcon.classList.add("filter-red", "card-deletor");
+    deleteIcon.style.alignSelf = "last baseline";
+    deleteIcon.style.margin = "3px";
+    deleteIcon.addEventListener("click", deleteCard);
+    cardElement.appendChild(deleteIcon);
+}
 
+// Retirer les boutons de suppression de cartes
+function removeCardDeleteButtons() {
+    Array.from(document.getElementsByClassName("card-deletor"))
+            .forEach(function(element) {
+                element.remove();
+            });
+}
+
+// Ajouter un bouton d'ajout de cartes
+function addNewCardButton(cardListElement) {
+    let addIcon = document.createElement("img");
+    addIcon.src = "./../images/add-icon.svg";
+    addIcon.classList.add("filter-red", "card-creator");
+    addIcon.addEventListener("click", addCard);
+    cardListElement.appendChild(addIcon);
+}
+
+
+// Supprimer les bouyton d'ajout de cartes
+function removeNewCardButtons() {
+    Array.from(document.getElementsByClassName("card-creator"))
+            .forEach(function(element) {
+                element.remove();
+            });
+}
+
+// Ajouter une nouvelle carte
+function addCard(event) {
+    let card_list = event.target.parentNode;
+    fetch("http://" + window.location.host + "/html/default_card.html")
+        .then(response => response.text())
+        .then((data) => {
+            event.target.remove();
+            card_list.innerHTML += data;
+            card_list.lastChild.classList.add("created-card");
+            addCardDeleteButton(card_list.lastChild);
+            setCardModificationPermission(card_list.lastChild, true);
+            addNewCardButton(card_list);
+        });
+}
+
+// Ajouter le bouton de création de tag
+function addTagCreator(tag_list) {
+    let addIcon = document.createElement("img");
+    addIcon.src = "./../images/add-icon.svg";
+    addIcon.classList.add("filter-red", "tag-creator");
+    addIcon.addEventListener("click", addTag);
+    tag_list.appendChild(addIcon);
+}
+
+// Supprimer le bouton de création de tag
+function removeTagCreator(tag_list) {
+    if (tag_list.lastChild.classList.contains("tag-creator")) {
+        tag_list.lastChild.remove();
+    }
+}
+
+// Callback pour le bouton d'ajout de tag
+function addTag(event) {
+    let tag_list = event.target.parentNode
+    removeTagCreator(tag_list);
+
+    tag_list.innerHTML += `<div class="card-tag"><p>tag</p></div>`;
+
+    addTagCreator(tag_list);
+}
+
+// Définit la permission pour modifier l'entièreté d'une carte
+function setCardModificationPermission(card, allow) {
+    card.contentEditable = allow;
+
+    // Obtenir le conteneur pour les tags
+    let card_tags = Array.from(card.children)
+                            .filter(function (element) {
+                                return element.classList.contains("card-desc");
+                            })
+                            .reduce(function (acc, element) {
+                                return acc.concat(Array.from(element.children));
+                            }, [])
+                            .filter(function (element) {
+                                return element.classList.contains("card-tags");
+                            });
+    if (card_tags.length == 0) {
+        return;
+    }
+    card_tags = card_tags[0];
+
+
+    if (allow) {
+        addTagCreator(card_tags);
+    }
+    else {
+        removeTagCreator(card_tags);
+    }
+}
+
+// Activer le mode édition
 function activateEditMode() {
     let button = document.getElementById("edit-mode-button");
 
@@ -119,11 +239,25 @@ function activateEditMode() {
     button.removeEventListener("click", promptAdmin);       // remove old button event
 
     setNamesModificationPermission(true);
+    Array.from(document.getElementsByClassName("card"))
+            .forEach(function(cardElement) {
+                addCardDeleteButton(cardElement);
+            });
+
+    Array.from(document.getElementsByClassName("card-list"))
+            .forEach(function(cardListElement) {
+                addNewCardButton(cardListElement);
+            });
+
+    Array.from(document.getElementsByClassName("created-card"))
+            .forEach(function (cardElement) {
+                setCardModificationPermission(cardElement, true);
+            });
 
     button.addEventListener("click", alertQuitEditMode);    // Set new button event
 }
 
-
+// Désactiver le mode édition
 function unactivateEditMode() {
     let button = document.getElementById("edit-mode-button");
 
@@ -131,6 +265,13 @@ function unactivateEditMode() {
     button.removeEventListener("click", alertQuitEditMode);     // remove old button event
 
     setNamesModificationPermission(false);
+    removeCardDeleteButtons();
+    removeNewCardButtons();
+
+    Array.from(document.getElementsByClassName("created-card"))
+            .forEach(function(cardElement) {
+                setCardModificationPermission(cardElement, false);
+            });
 
     button.addEventListener("click", promptAdmin);          // set new button event
 }
