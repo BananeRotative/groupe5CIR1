@@ -17,12 +17,12 @@ function scratchImage(event) {
     let mouse_x = event.clientX + document.body.scrollLeft - event.target.getBoundingClientRect().left;
     let mouse_y = event.clientY + document.body.scrollTop - event.target.getBoundingClientRect().top;
 
-    scratch_mask.innerHTML += `<circle cx="${mouse_x}" cy="${mouse_y}" r="15" fill="black" class="scratch"></circle>`
+    scratch_mask.insertAdjacentHTML("beforeend", `<circle cx="${mouse_x}" cy="${mouse_y}" r="15" fill="black" class="scratch"></circle>`);
 }
 
 // Callback pour le début du grattage de carte
 function startScratch(event) {
-    getCardImageContainer(event.target).addEventListener("mousemove", scratchImage);
+    getCardImageContainer(event.target).lastChild.addEventListener("mousemove", scratchImage);
 }
 
 
@@ -31,14 +31,14 @@ function stopScratch(event) {
     getCardImageContainer(event.target).removeEventListener("mousemove", scratchImage);
     
     // Supprimer tous les cercles (supprimer les points grattés)
-    let scratch_mask = document.getElementById("card-mask-scratch");
-    Array.from(scratch_mask.children)
-        .filter(function (element) {
-            return element.classList.contains("scratch");
-        })
-        .forEach(function (element) {
-            element.remove();
-        });
+    // let scratch_mask = document.getElementById("card-mask-scratch");
+    // Array.from(scratch_mask.children)
+    //     .filter(function (element) {
+    //         return element.classList.contains("scratch");
+    //     })
+    //     .forEach(function (element) {
+    //         element.remove();
+    //     });
 }
 
 
@@ -63,11 +63,11 @@ function activateCardScratching() {
 
     // Ajout de la texture à gratter et de son masque
     let image_container = getCardImageContainer(card);
-    image_container.innerHTML += `
+    image_container.insertAdjacentHTML("beforeend",`
 <mask id="card-mask-scratch">
     <circle cx="150" cy="100" r="100" fill="white"></circle>
 </mask>
-<image href="./../images/members_cards/a_gratter.png" mask="url(#card-mask-scratch)"></image>`;
+<image href="./../images/members_cards/a_gratter.png" mask="url(#card-mask-scratch)"></image>`);
 
     // Reagir quand la souris entre ou sort de la carte
     card.addEventListener("mouseenter", startScratch);
@@ -168,7 +168,7 @@ function addCard(event) {
         .then(response => response.text())
         .then((data) => {
             event.target.remove();
-            card_list.innerHTML += data;
+            card_list.insertAdjacentHTML("beforeend", data);
             card_list.lastChild.classList.add("created-card");
             addCardDeleteButton(card_list.lastChild);
             setCardModificationPermission(card_list.lastChild, true);
@@ -197,14 +197,19 @@ function addTag(event) {
     let tag_list = event.target.parentNode
     removeTagCreator(tag_list);
 
-    tag_list.innerHTML += `<div class="card-tag"><p>tag</p></div>`;
+    tag_list.insertAdjacentHTML("beforeend", `<div class="card-tag editable"><p>tag</p></div>`);
+    tag_list.lastChild.contentEditable = true;
 
     addTagCreator(tag_list);
 }
 
 // Définit la permission pour modifier l'entièreté d'une carte
 function setCardModificationPermission(card, allow) {
-    card.contentEditable = allow;
+    // card.contentEditable = allow;
+    Array.from(card.getElementsByClassName("editable"))
+            .forEach(function(element) {
+                element.contentEditable = allow;
+            });
 
     // Obtenir le conteneur pour les tags
     let card_tags = Array.from(card.children)
@@ -217,6 +222,7 @@ function setCardModificationPermission(card, allow) {
                             .filter(function (element) {
                                 return element.classList.contains("card-tags");
                             });
+
     if (card_tags.length == 0) {
         return;
     }
