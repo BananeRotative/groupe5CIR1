@@ -201,13 +201,18 @@ function antiplagiat(){
  
  function addeventplagiat(){
     //selectionne tous les elements 
-      let all=document.querySelectorAll('*');
+      let all=document.querySelectorAll('p');
         // fais apparaitre un message quand on copie un element
       Array.from(all).forEach(function(element){
          element.addEventListener("copy",antiplagiat);
       });
       
       //image marche pas 
+      let image=document.querySelectorAll('img');
+
+      Array.from(image).forEach(function(element) {
+        element.addEventListener("copy",antiplagiat);
+      });
 }
 
     
@@ -285,7 +290,7 @@ function telephone(){
     
         function jouerSonnerie() {
             // Créer un contexte audio
-            var sonnerie = new Audio('../sonnerie.mp3'); 
+            var sonnerie = new Audio('../dragonball.mp3');
             
             // Demarrer sonnerie
             sonnerie.play();
