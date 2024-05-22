@@ -261,7 +261,7 @@ function antiplagiat(){
 
 function telephone(){
     document.addEventListener('DOMContentLoaded', function() {
-        var numerosTelephone = document.getElementsByClassName("footer-phone")
+        var numerosTelephone = document.getElementsByClassName("footer-phone");
     
         Array.from(numerosTelephone).forEach(function(numero) {
             numero.addEventListener('copy', function(event) {
@@ -303,10 +303,47 @@ function telephone(){
         }
     });
 }
-    
-    
 
-function main() {
+function insertNavbar() {
+    // Define a variable, accessible on any js script.
+    document.body.navbarInserted = false;
+
+    fetch("http://" + window.location.host + "/html/navbar.txt")
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML("afterbegin", data);
+            document.body.navbarInserted = true;
+        });
+}
+
+function insertFooter() {
+    // Define a new variable, accessible on any js script
+    document.body.footerInserted = false;
+    fetch("http://" + window.location.host + "/html/footer.txt")
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML("beforeend", data);
+            document.body.footerInserted = true;
+        });
+}
+
+
+// https://stackoverflow.com/questions/22125865/how-to-wait-until-a-predicate-condition-becomes-true-in-javascript
+function until(conditionFunction) {
+    const poll = resolve => {
+        if(conditionFunction()) resolve();
+        else setTimeout(_ => poll(resolve), 400);
+    }
+
+    return new Promise(poll);
+}
+
+async function main() {
+    insertNavbar();
+    insertFooter();
+    await until(_ => document.body.navbarInserted == true);
+    await until(_ => document.body.footerInserted == true);
+
     //verif_input();
     initClock();
     addeventplagiat();
