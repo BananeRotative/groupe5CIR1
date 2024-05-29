@@ -16,36 +16,27 @@ function fleche(){
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 }
-/*
-function changement_image(){
 
+function activerChangementImage() {
+    let projectImages = document.querySelectorAll('.project-image');
 
-document.addEventListener('DOMContentLoaded', ()=> {
-    // Selectionne toutes les images de projet
-        const projectImages = document.querySelectorAll('.project-image');
-
-        projectImages.forEach(image => {
-            // Définir les images alternatives
-            const image1 = image.src;
-            const image2 = image.src.includes('./../Images//image projet/xp.jpg');
-            const image3 = image.src.includes('./..Images/image projet/seas.png');
-            // Ajouter un événement de clic pour alterner les images
-            image.addEventListener('click', () => {
-                if (image.src === image1) {
-                    image.src = image2;
-                } else {
-                    image.src = image1;
-                }
-            });
+    projectImages.forEach(image => {
+        // Définir les images alternatives
+        image.alternativeImage = image.src.slice(0, -5) + "2" + image.src.slice(-4);
+        
+        // Ajouter un événement de clic pour alterner les images
+        image.addEventListener('click', () => {
+            // Echanger alternative et src
+            let temp = image.src;
+            image.src = image.alternativeImage;
+            image.alternativeImage = temp;
         });
     });
-
 }
-*/
 
 function main(){
     fleche();
-    //changement_image();
+    activerChangementImage();
 }
 
 main();
