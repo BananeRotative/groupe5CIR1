@@ -1,32 +1,42 @@
-function modals1(){
-    let text1 = document.getElementById("text1");
-    console.log(text1);
-    let title1 = text1.getElementsByTagName("h3")[0];
-    console.log(title1);
-    title1.addEventListener("click", () => {
-        createModal1(text1);
-    });
+// --- Fenêtre modales
+
+function createModals(){
+    let id_dialogs = 1;
+    Array.from(document.getElementsByClassName("plateforme"))
+        .forEach(function(element) {
+            // Obtenir le titre, image, et le texte
+            let title = element.getElementsByClassName("titre-plateforme")[0];
+            let image = element.getElementsByClassName("plateforme-image")[0];
+            let text = element.getElementsByClassName("plateforme-desc")[0].innerText;
+            let sliced_text;
+            if (text.lenght < 150) {
+                sliced_text = text;
+            }
+            else {
+                sliced_text = text.slice(0, 147) + "...";
+            }
+            
+            // Créer la fenêtre modale
+            let dialog_window = document.createElement("dialog");
+            dialog_window.innerHTML = `
+<div class="align-line">
+    <h3>${title.innerText}</h3>
+    <form method="dialog">
+        <button>X</button>
+    </form>
+</div>
+<img src=${image.src} alt=${image.alt}>
+<p>${sliced_text}`;
+            dialog_window.id = "modale-" + id_dialogs;
+            element.appendChild(dialog_window);
+
+            title.addEventListener("click", () => {dialog_window.showModal();});
+
+            id_dialogs += 1;
+        });
 }
-function createModal1(text){
-    let modal = document.createElement("dialog");
-    modal.id = "mod1";
-    modal.innerHTML= text.getElementsByTagName("h3").innerHTML;
-    console.log(modal);
-    for(let image of document.images){
-        if(image.src == "living-lab.png"){
-            modal.innerText+=image;
-            console.log(image);
-            console.log(modal);
-        }
-    }
-    let uncutText= text.getElementsByTagName("p")[0].innerText;
-    let cutText = uncutText.slice(150);
-    modal.value += `<p>${cutText}</p>`;
-    console.log(cutText);
-    console.log(modal);
-    document.getElementById("mod1").showModal();
-}
+
 function main(){
-    modals1();
+    createModals();
 }
 main();

@@ -11,87 +11,6 @@
         <script src="./../JS/infos_et_contact.js" defer></script>
     </head>
     <body>
-        <nav class="navbar red-background">
-            <a class="navbar-logo" href="accueil.html">
-                <img src="./../images/LabISEN.png" alt="logo LabISEN">
-            </a>
-            <div class="navbar-menu red-background">
-                <a class="navbar-menu-item red-background" id="navbar-accueil" href="accueil.html">
-                    <img src="./../images/menu_icons/accueil_icon.svg" alt="accueil icon" class="image-menu">
-                    <p>Accueil</p>
-                </a>
-                <div class="submenu-container">
-                    <div class="navbar-menu-item red-background" id="navbar-recherhe">
-                        <img src="./../images/menu_icons/recherche_icon.svg" alt="recherche icon" class="image-menu">
-                        <p>Recherche</p>
-                    </div>
-                    <div class="submenu-out-of-bound">
-                        <a class="navbar-submenu-item red-background" id="navbar-thematiques" href="thematique.html">
-                            <p>Thematiques</p>
-                        </a>
-                        <a class="navbar-submenu-item red-background" id="navbar-plateformes" href="plateforme.html">
-                            <p>Plateformes</p>
-                        </a>
-                    </div>
-                </div>
-                <a class="navbar-menu-item red-background" id="navbar-membres" href="membres.html">
-                    <img src="./../images/menu_icons/membres_icon.svg" alt="accueil icon" class="image-menu">
-                    <p>Membres</p>
-                </a>
-                <a class="navbar-menu-item red-background" id="navbar-projets" href="projets.html">
-                    <img src="./../images/menu_icons/projets_icon.svg" alt="accueil icon" class="image-menu">
-                    <p>Projets</p>
-                </a>
-                <a class="navbar-menu-item red-background" id="navbar-publications" href="publications.html">
-                    <img src="./../images/menu_icons/publications_icon.svg" alt="accueil icon" class="image-menu">
-                    <p>Publications</p>
-                </a>
-                <a class="navbar-menu-item red-background" id="navbar-partenaires" href="partenaires.html">
-                    <img src="./../images/menu_icons/partenaires_icon.svg" alt="accueil icon" class="image-menu">
-                    <p>Partenaires</p>
-                </a>
-                <div class="submenu-container">
-                    <div class="navbar-menu-item red-background" id="navbar-infos-contact">
-                        <img src="./../images/menu_icons/infos_contact_icon.svg" alt="accueil icon" class="image-menu">
-                        <p>Infos et contact</p>
-                    </div>
-                    <div class="submenu-out-of-bound">
-                        <a class="navbar-submenu-item red-background" id="navbar-contact" href="contact.html">
-                            <p>Contactez-nous</p>
-                        </a>
-                        <a class="navbar-submenu-item red-background" id="navbar-acces" href="plan.html">
-                            <p>Plan d'accès</p>
-                        </a>
-                        <a class="navbar-submenu-item red-background" id="navbar-offres" href="offres.html">
-                            <p>Offres d'emploi</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <div class="align-line">
-            <div>
-                <p>Heure actuelle :</p>
-                <div id="clock-current-time" class="clock">
-                    <div id="clock-current-hours-tens"></div>
-                    <div id="clock-current-hours-units"></div>
-                    <div id="clock-current-colon" class="colon">:</div>
-                    <div id="clock-current-minutes-tens"></div>
-                    <div id="clock-current-minutes-units"></div>
-                </div>
-            </div>
-            <div>
-                <p>Temps passé sur la page :</p>
-                <div id="clock-time-on-page" class="clock">
-                    <div id="clock-time-on-page-minutes-tens"></div>
-                    <div id="clock-time-on-page-minutes-units"></div>
-                    <div id="clock-time-on-page-colon" class="colon">:</div>
-                    <div id="clock-time-on-page-seconds-tens"></div>
-                    <div id="clock-time-on-page-seconds-units"></div>
-                </div>
-            </div>
-        </div>
-
         <div id="content">
             <div class="text">
             <h1>Contectez le responsable de l'equipe</h1>
@@ -106,7 +25,7 @@
                             <path d="M27.5 25C29.6217 25 31.6566 24.1571 33.1569 22.6569C34.6572 21.1566 35.5 19.1217 35.5 17C35.5 14.8783 34.6572 12.8434 33.1569 11.3431C31.6566 9.84285 29.6217 9 27.5 9C25.3783 9 23.3434 9.84285 21.8431 11.3431C20.3429 12.8434 19.5 14.8783 19.5 17C19.5 19.1217 20.3429 21.1566 21.8431 22.6569C23.3434 24.1571 25.3783 25 27.5 25ZM24.6438 28C18.4875 28 13.5 32.9875 13.5 39.1437C13.5 40.1687 14.3313 41 15.3563 41H39.6438C40.6688 41 41.5 40.1687 41.5 39.1437C41.5 32.9875 36.5125 28 30.3563 28H24.6438Z" fill="black"/>
                         </svg> 
                     </div>
-                    <input type="text" name="prenom" id="contact-name-field" placeholder="Prénom Nom">
+                    <input type="text" name="prenom" id="contact-name-field" placeholder="Prénom Nom" required>
                 </div>
                 <div id="contact-mail">
                     <div class="contact-icon">
@@ -115,43 +34,11 @@
                             <path d="M27.5 13C20.875 13 15.5 18.375 15.5 25C15.5 31.625 20.875 37 27.5 37C28.6063 37 29.5 37.8937 29.5 39C29.5 40.1063 28.6063 41 27.5 41C18.6625 41 11.5 33.8375 11.5 25C11.5 16.1625 18.6625 9 27.5 9C36.3375 9 43.5 16.1625 43.5 25V27C43.5 30.3125 40.8125 33 37.5 33C35.6688 33 34.025 32.175 32.925 30.8813C31.5 32.1938 29.5938 33 27.5 33C23.0813 33 19.5 29.4188 19.5 25C19.5 20.5813 23.0813 17 27.5 17C29.2437 17 30.8563 17.5563 32.1688 18.5063C32.525 18.1938 32.9875 18 33.5 18C34.6063 18 35.5 18.8938 35.5 20V25V27C35.5 28.1063 36.3937 29 37.5 29C38.6063 29 39.5 28.1063 39.5 27V25C39.5 18.375 34.125 13 27.5 13ZM31.5 25C31.5 23.9391 31.0786 22.9217 30.3284 22.1716C29.5783 21.4214 28.5609 21 27.5 21C26.4391 21 25.4217 21.4214 24.6716 22.1716C23.9214 22.9217 23.5 23.9391 23.5 25C23.5 26.0609 23.9214 27.0783 24.6716 27.8284C25.4217 28.5786 26.4391 29 27.5 29C28.5609 29 29.5783 28.5786 30.3284 27.8284C31.0786 27.0783 31.5 26.0609 31.5 25Z" fill="black"/>
                         </svg> 
                     </div>
-                    <input type="text" name="email" id="contact-email-field" placeholder="email@exemple.com">
+                    <input type="email" name="email" id="contact-email-field" placeholder="email@exemple.com" required>
                 </div>
-                <textarea name="commentaire" id="contact-comment" cols="30" rows="10" placeholder="Votre message (1000 caractere maximum)"></textarea>
-                <input type="submit" value="Envoyer" id="contact-submit-button" class="text-element">
+                <textarea name="commentaire" id="contact-comment" cols="30" rows="10" placeholder="Votre message (1000 caractere maximum)" required></textarea>
+                <input type="button" value="Envoyer" id="contact-submit-button" class="text-element" aria-disabled="true">
             </form>
         </div>
-
-        <footer class="red-background">
-            <div id="footer-coordonnees">
-                <h3 class="footer-title">Coordonnées</h3>
-                <div id="footer-ecoles">
-                    <div class="school-ref" id="footer-Nantes">
-                        <p class="footer-address">ISEN Nantes: Adresse:33 QUATER Av. du Champ de Manœuvre, 44470 Carquefou</p>
-                        <p class="footer-phone">Téléphone: 02 30 13 05 60</p>
-                    </div>
-                    <div class="school-ref" id="footer-Brest">
-                        <p class="footer-address">ISEN Brest : Adresse : 20 Rue Cuirassé Bretagne, 29200 Brest</p>
-                        <p class="footer-phone">Téléphone: 02 98 03 84 00</p>
-                    </div>
-                    <div class="school-ref" id="footer-Caen">
-                        <p class="footer-address">ISEN Caen : Adresse : 8 Av. Croix Guérin, 14000 Caen</p>
-                        <p class="footer-phone">Téléphone: 02 30 31 03 20</p>
-                    </div>
-                    <div class="school-ref" id="footer-Rennes">
-                        <p class="footer-address">ISEN Rennes : Adresse : 2 Rue Robert d'Arbrissel, 35000 Rennes</p>
-                        <p class="footer-phone">Téléphone: 02 30 13 02 50</p>
-                    </div>
-                </div>
-            </div>
-            <div id="footer-developers">
-                <h3 class="footer-title">Développeurs</h3>
-                <a class="footer-developer" href="https://isen-nantes.fr/" target="_blank">Mathieu Gicquel-Bourdeau</a>
-                <a class="footer-developer" href="https://www.linkedin.com/in/erwan-langlais-9a97652a3/" target="_blank">Erwan Langlais</a>
-                <a class="footer-developer" href="https://www.linkedin.com/in/alexis-rochon-sanz-758a77299/" target="_blank">Alexis Rochon-Sanz</a>
-            </div>
-        </footer>
-        <div id="loader-container">
-            <div class="loader"></div>
     </body>
 </html>
