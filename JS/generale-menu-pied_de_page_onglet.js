@@ -304,11 +304,12 @@ function telephone(){
 }
 
 function couleur_item(){
-    document.addEventListener('DOMContentLoaded', () => {
-    const navbarItems = document.querySelectorAll('.navbar-menu-item');
-
+    //document.addEventListener('DOMContentLoaded', () => {
+        console.log('Ancienne couleur : Rouge');
+        console.log('Nouvelle couleur : Rouge-foncé');
+    let navbarItems = document.querySelectorAll('.navbar-menu-item');
     // Vérifiez si un élément actif est stocké dans le localStorage
-    const activeItemId = localStorage.getItem('activeNavbarItem');
+    let activeItemId = localStorage.getItem('activeNavbarItem');
     if (activeItemId) {
         const activeItem = document.getElementById(activeItemId);
         if (activeItem) {
@@ -316,19 +317,19 @@ function couleur_item(){
         }
     }
 
-    navbarItems.forEach(item => {
-        item.addEventListener('click', () => {
-            // Supprimer la classe active de tous les items
-            navbarItems.forEach(navItem => navItem.classList.remove('active'));
+        navbarItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Supprimer la classe active de tous les items
+                navbarItems.forEach(navItem => navItem.classList.remove('active'));
 
-            // Ajouter la classe active à l'item cliqué
-            item.classList.add('active');
+                // Ajouter la classe active à l'item cliqué
+                item.classList.add('active');
 
-            // Stocker l'ID de l'item cliqué dans le localStorage
-            localStorage.setItem('activeNavbarItem', item.id);
+                // Stocker l'ID de l'item cliqué dans le localStorage
+                localStorage.setItem('activeNavbarItem', item.id);
+            });
         });
-    });
-});
+    
 }
 
 function insertNavbar() {

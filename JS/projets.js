@@ -1,17 +1,20 @@
 function fleche(){
-    document.addEventListener('DOMContentLoaded', function() {
-        // Sélectionner le bouton "Remonter"
-        var btnRemonter = document.getElementById('fleche');
+    window.onscroll = function() {scrollFunction()};
     
-        // Ajouter un gestionnaire d'événements de clic au bouton "Remonter"
-        btnRemonter.addEventListener('click', function() {
-            // Faire défiler la page vers le haut en douceur
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    });
+    function scrollFunction() {
+        var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
+    }
+
+    
+    // Lorsque l'utilisateur clique sur le bouton, faire défiler la page vers le haut
+    document.getElementById("scrollToTopBtn").onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 }
 /*
 function changement_image(){
