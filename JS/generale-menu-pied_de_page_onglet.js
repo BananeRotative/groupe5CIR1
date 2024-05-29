@@ -246,12 +246,11 @@ function antiplagiat(){
     }
     
     function popup(){
-        // Demander à l'utilisateur de confirmer son choix
+        // Demande a l'utilisateur de confirmer son choix
         var confirmation = confirm("Êtes-vous sûr de vouloir naviguer vers la page des membres ?");
     
-        // Si l'utilisateur clique sur "OK"
         if (confirmation) {
-            // Rediriger vers la page des membres
+            // redirige vers membres
             window.location.href = "membres.html";
         } else {
             // Si l'utilisateur clique sur "Annuler"ne rien faire
@@ -265,37 +264,37 @@ function telephone(){
     
         Array.from(numerosTelephone).forEach(function(numero) {
             numero.addEventListener('copy', function(event) {
-                // Empêcher le comportement par défaut de la copie
+                // Empeche le comportement par défaut de la copie
                 event.preventDefault();
     
-                // Récupérer le numéro de téléphone copié
+                // recupere le numéro de téléphone copié
                 var numeroCopie = window.getSelection().toString();
     
-                // Afficher le message prompt avec le numéro copié
-                var confirmation = prompt("Si vous voulez appeler ce numéro : " + numeroCopie + ", entrez-le de nouveau dans le champ ci-dessous puis validez :");
+                // afficher le message avec le numéro copié
+                var confirmation = prompt("Si vous voulez appeler ce numéro : " + numeroCopie + ", entrez-le de nouveau dans le champ puis validez :");
                 
-                // Vérifier si l'utilisateur a entré le numéro correctement
+                // vérifier si l'utilisateur a entré le numéro correctement
                 if (confirmation === numeroCopie) {
-                    // Affiche le message dans la console
+                    // affiche le message dans la console
                     console.log("Vous appelez ce numéro : " + numeroCopie);
     
-                    // Jouer la sonnerie pendant 5 secondes
+                    // jouer la sonnerie pendant 5 secondes
                     jouerSonnerie();
                 } else {
-                    alert("Le numéro saisi ne correspond pas au numéro copié. Veuillez réessayer.");
+                    alert("Le numéro saisi ne correspond pas au numéro copié");
                 }
             });
         });
         
     
         function jouerSonnerie() {
-            // Créer un contexte audio
-            var sonnerie = new Audio('../dragonball.mp3');
+            // créer un contexte audio
+            var sonnerie = new Audio('../sonnerie.mp3');
             
-            // Demarrer sonnerie
+            // demarre sonnerie
             sonnerie.play();
     
-            // Arreter le bruit apres 5 secondes
+            // arrete le bruit apres 5 secondes
             setTimeout(function() {
                 sonnerie.pause();
                 sonnerie.currentTime=0; // on remet le temps a zero
@@ -303,8 +302,34 @@ function telephone(){
         }
     });
 }
-    
-    
+
+function couleur_item(){
+    document.addEventListener('DOMContentLoaded', () => {
+    const navbarItems = document.querySelectorAll('.navbar-menu-item');
+
+    // Vérifiez si un élément actif est stocké dans le localStorage
+    const activeItemId = localStorage.getItem('activeNavbarItem');
+    if (activeItemId) {
+        const activeItem = document.getElementById(activeItemId);
+        if (activeItem) {
+            activeItem.classList.add('active');
+        }
+    }
+
+    navbarItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Supprimer la classe active de tous les items
+            navbarItems.forEach(navItem => navItem.classList.remove('active'));
+
+            // Ajouter la classe active à l'item cliqué
+            item.classList.add('active');
+
+            // Stocker l'ID de l'item cliqué dans le localStorage
+            localStorage.setItem('activeNavbarItem', item.id);
+        });
+    });
+});
+}
 
 function main() {
     //verif_input();
@@ -312,6 +337,7 @@ function main() {
     addeventplagiat();
     Delay();
     telephone();
+    couleur_item();
 }
 
 main();

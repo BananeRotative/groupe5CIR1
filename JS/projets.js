@@ -13,31 +13,36 @@ function fleche(){
         });
     });
 }
-
+/*
 function changement_image(){
-    document.addEventListener('DOMContentLoaded', function() {
-        // Sélectionne toutes les images de projet
-        var imagesProjets = document.querySelectorAll('.project-image');
-    
-        // Parcourir toutes les images de projet et ajouter un gestionnaire d'événements de clic à chacune
-        imagesProjets.forEach(function(image) {
-            image.addEventListener('click', function() {
-                // Récupére l'image actuel 
-                var currentSrc = image.getAttribute('src');
-    
-                // changement de l'image
-                var newSrc = currentSrc.endsWith('../Images/image projet/drone.png');
-    
-                // Change l'image pour basculer entre les deux images
-                image.setAttribute('src', newSrc);
+
+
+document.addEventListener('DOMContentLoaded', ()=> {
+    // Selectionne toutes les images de projet
+        const projectImages = document.querySelectorAll('.project-image');
+
+        projectImages.forEach(image => {
+            // Définir les images alternatives
+            const image1 = image.src;
+            const image2 = image.src.includes('./../Images//image projet/xp.jpg');
+            const image3 = image.src.includes('./..Images/image projet/seas.png');
+            // Ajouter un événement de clic pour alterner les images
+            image.addEventListener('click', () => {
+                if (image.src === image1) {
+                    image.src = image2;
+                } else {
+                    image.src = image1;
+                }
             });
         });
     });
+
 }
+*/
 
 function main(){
     fleche();
-    changement_image();
+    //changement_image();
 }
 
 main();
