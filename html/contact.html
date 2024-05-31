@@ -26,6 +26,10 @@
                         </svg> 
                     </div>
                     <input type="text" name="prenom" id="contact-name-field" placeholder="Prénom Nom" required>
+                    
+                </div>
+                <div class="errorAlert">
+                    <p id="invalidName"></p>
                 </div>
                 <div id="contact-mail">
                     <div class="contact-icon">
@@ -36,8 +40,14 @@
                     </div>
                     <input type="email" name="email" id="contact-email-field" placeholder="email@exemple.com" required>
                 </div>
+                <div class="errorAlert">
+                    <p id="invalidMail"></p>
+                </div>
                 <textarea name="commentaire" id="contact-comment" cols="30" rows="10" placeholder="Votre message (1000 caractere maximum)" required></textarea>
-                <input type="button" value="Envoyer" id="contact-submit-button" class="text-element" aria-disabled="true">
+                <div class="errorAlert">
+                    <p id="invalidComment"></p>
+                </div>
+                <input type="button" value="Envoyer" id="contact-submit-button" class="text-element" disabled>
             </form>
         </div>
     </body>

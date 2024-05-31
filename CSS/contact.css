@@ -38,12 +38,14 @@
 
 #contact-submit-button {
     padding: 0.625rem;
-    background-color: #003A70;
-    color: white;
     border-radius: 10% / 20%;
     align-self: flex-end;
 }
 
 .text{
     text-align: center;
+}
+
+.errorAlert{
+    background-color: rgb(255, 110, 110);
 }
