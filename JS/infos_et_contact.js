@@ -92,18 +92,55 @@ function validContent(content){
     return false;
 }
 function readyTimer(){
-    let timeLeft = 3;
+    document.getElementById("form-game").getElementsByTagName("h3")[0].innerText = "Pourras-tu faire 50 clics en 10 secondes ?";
+    setInterval(readyTimerUpdate,1000);
     
 }
-function timerUpdate(time){
-    let sec = time % 60;
-    let result = `${sec.toString().padStart(2, "0")}`;
-    return result
+function readyTimerUpdate(){
+    if(document.getElementById("readyTimer").innerText == ""){
+        document.getElementById("readyTimer").innerText = "À vos marques...";
+    }
+    else if(document.getElementById("readyTimer").innerText == "À vos marques..."){
+        document.getElementById("readyTimer").innerText = "Prêts...";
+    }
+    else if(document.getElementById("readyTimer").innerText == "Prêts..."){
+        document.getElementById("readyTimer").innerText = "Partez !";
+        document.getElementById("clicker-button").removeAttribute("hidden");
+        formGame();
+    }
 }
 function formGame(){
-
+    document.getElementById("gameTimer").removeAttribute("hidden");
+    document.getElementById("clicker-button").removeAttribute("disabled");
+    document.getElementById("clicker-button").addEventListener("click",buttonClicked50);
+    setInterval(gameTimerUpdate,1000);
+}
+let score = 0;
+function buttonClicked50(){
+    score++;
+}
+let gameTimer = 10;
+function gameTimerUpdate(){
+    gameTimer--;
+    document.getElementById("gameTimer").innerText = gameTimer+"";
+    if(gameTimer=="0"){
+        gameTimer++;
+        document.getElementById("clicker-button").setAttribute("disabled","");
+        if(score>=30){
+            document.getElementById("contact-send-button").removeAttribute("disabled");
+        }
+        else{
+            document.getElementById("contact-name-field").innerText = "";
+            document.getElementById("contact-email-field").innerText = "";
+            document.getElementById("contact-comment").innerText = "";
+        }
+    }
+}
+function gameLaunch(){
+    document.getElementById("contact-submit-button").addEventListener("click",readyTimer);
 }
 function main(){
     buttonDisabler();
+    gameLaunch();
 }
 main();
