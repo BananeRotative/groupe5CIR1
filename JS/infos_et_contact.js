@@ -91,6 +91,18 @@ function validContent(content){
     }
     return false;
 }
+function readyTimer(){
+    let timeLeft = 3;
+    
+}
+function timerUpdate(time){
+    let sec = time % 60;
+    let result = `${sec.toString().padStart(2, "0")}`;
+    return result
+}
+function formGame(){
+
+}
 function main(){
     buttonDisabler();
 }
