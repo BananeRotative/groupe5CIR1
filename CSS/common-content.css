@@ -281,3 +281,9 @@ footer h3 {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+/*js background navbar*/
+.navbar-menu-item.active {
+    background-color: darkred; 
+    color: white; 
+}

@@ -1,3 +1,5 @@
+let membres_id_count = 345456;  // Nombre aléatoire, pour éviter un même id avec un autre script
+
 // ------ Grattage de la carte Ayoub Karine ------
 
 function getCardImageContainer(card) {
@@ -43,9 +45,9 @@ function stopScratch(event) {
 
 
 // Activer le grattage sur la carte Ayoub Karine
-function activateCardScratching() {
+function activateCardScratching(search_zone = document) {
     // Trouver la carte avec le nom Ayoub Karine
-    let card = Array.from(document.getElementsByClassName("card"))
+    let card = Array.from(search_zone.getElementsByClassName("card"))
         .filter(function (element) {
             if (element.children.length < 2) {
                 return false;
@@ -167,12 +169,17 @@ function addCard(event) {
     fetch("http://" + window.location.host + "/html/default_card.html")
         .then(response => response.text())
         .then((data) => {
-            event.target.remove();
+            event.target.remove();  // Supprmier le bouton de création de carte
+
+            // Créer la carte
             card_list.insertAdjacentHTML("beforeend", data);
+            card_list.lastChild.id = membres_id_count + "-card";
+            membres_id_count += 1;
             card_list.lastChild.classList.add("created-card");
             addCardDeleteButton(card_list.lastChild);
             setCardModificationPermission(card_list.lastChild, true);
-            addNewCardButton(card_list);
+
+            addNewCardButton(card_list); // Replacer le bouton de création de carte
         });
 }
 
@@ -239,6 +246,8 @@ function setCardModificationPermission(card, allow) {
 
 // Activer le mode édition
 function activateEditMode() {
+    unactivateCardDialogs();
+
     let button = document.getElementById("edit-mode-button");
 
     button.classList.add("filter-red");     // Change color to red
@@ -280,6 +289,8 @@ function unactivateEditMode() {
             });
 
     button.addEventListener("click", promptAdmin);          // set new button event
+
+    activateCardDialogs();
 }
 
 
@@ -288,10 +299,80 @@ function setupEditModeButton() {
     button.addEventListener("click", promptAdmin);
 }
 
+// ------ MODALES ------
+
+// Activation de toutes les cartes modales
+function activateCardDialogs() {
+    Array.from(document.getElementsByClassName("card"))
+        .forEach(function(card) {
+            card.addEventListener("click", setupDialog);
+        });
+}
+
+// Désactivation de toutes les cartes modales
+function unactivateCardDialogs() {
+    Array.from(document.getElementsByClassName("card"))
+        .forEach(function(card) {
+            card.removeEventListener("click", setupDialog);
+        })
+}
+
+
+// Créer une modale
+function setupDialog(event) {
+    // Remonter le DOM jusqu'au div de classe "card"
+    let card = event.target;
+    while (! (card.classList.contains("card") || card == null)) {
+        card = card.parentNode;
+    }
+    if (card == null) {
+        return;
+    }
+
+    // Supprimer les modales existantes pour cette carte
+    Array.from(card.parentNode.getElementsByTagName("dialog"))
+        .filter(function (dialog) {
+            return dialog.id == card.id + "-dialog";
+        })
+        .forEach(function(dialog) {
+            dialog.remove();
+        });
+
+
+    // (Re)créer la modale
+    let dialog_window = document.createElement("dialog");
+    dialog_window.insertAdjacentHTML("afterbegin", card.outerHTML);
+
+    dialog_window.id = card.id + "-dialog";     // Dynamic id
+
+    // Ajouter un bouton pour fermer la modale
+    dialog_window.insertAdjacentHTML("afterbegin", `
+<form method="dialog" style="display: flex; justify-content: flex-end; margin: 2px;">
+<button>X</button>
+</form>`);
+
+    card.parentNode.appendChild(dialog_window);
+    
+    dialog_window.showModal();
+
+    activateCardScratching(dialog_window)
+}
+
+
+function setupDynamicCardIDs() {
+    Array.from(document.getElementsByClassName("card"))
+        .forEach(function(card) {
+            card.id = membres_id_count + "-card";
+            membres_id_count += 1;
+        });
+}
+
 
 function mainMembres() {
+    setupDynamicCardIDs()
     activateCardScratching();
     setupEditModeButton();
+    activateCardDialogs();
 }
 
 mainMembres();
