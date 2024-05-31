@@ -28,31 +28,74 @@ function sameYear(publication, year) {
     return years.includes(year);
 }
 
+// publication est un noeud HTML de classe "publication"
+function sameType(publication, type) {
+    switch (type) {
+        case "toutes":
+            return true;
+        
+        case "article-revue":
+            return publication.classList.contains("article-revue");
+
+        case "comm":
+            return publication.classList.contains("comm-congres");
+
+        default: 
+            return true;
+    }
+}
+
 // Callback appelé au moment de cliquer sur le bouton de validation du formulaire
 function filter() {
     // Récupérer les champs du formulaire
-    let author = "Salima Bourbia";   // A faire
-    let title = "Multi"; // A faire
-    let year = "2023";   // A faire
+    let form = document.forms[0];
+    let author = form.publFormAuthor.value;
+    let title = form.publFormTitle.value;
+    let year = form.publFormYear.value.slice(0, 4);
+    let type = form.publFormType.value;
 
     // Activer/désactiver les publications
     Array.from(document.getElementsByClassName("publication"))
         .forEach(function (publication) {
             if (authorsContains(publication, author)
                  && titleContains(publication, title)
-                 && sameYear(publication, year))
+                 && sameYear(publication, year)
+                 && sameType(publication, type))
             {
-                // Activer à faire
+                // Activer
+                publication.style.display = "";
             }
             else {
-                // Désactiver à faire
+                // Désactiver
+                publication.style.display = "none";
             }
-        })
+        });
+
+    return false;   // Utile pour éviter de recharger la page
+}
+
+// Créer un formulaire pour le filtre
+function createForm() {
+    let content = document.getElementById("content");
+    let formHTML = `
+<form onSubmit="return filter()" id="publ-form">
+    <input type="text" name="publFormAuthor">
+    <input type="text" name="publFormTitle">
+    <input type="date" name="publFormYear">
+    <ul style="list-style-type: none;">
+        <li><input type="radio" name="publFormType" value="toutes">Toutes</li>
+        <li><input type="radio" name="publFormType" value="article-revue">Articles de revue</li>
+        <li><input type="radio" name="publFormType" value="comm">Communications</li>
+    </ul>
+    <button>Valider</button>
+</form>`;
+
+    content.insertAdjacentHTML("afterbegin", formHTML);
 }
 
 
 function main(){
-    
+    createForm();
 };
 
 // TODO (commentaire à supprimer après)
