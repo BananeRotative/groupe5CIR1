@@ -166,7 +166,8 @@ function removeNewCardButtons() {
 // Ajouter une nouvelle carte
 function addCard(event) {
     let card_list = event.target.parentNode;
-    fetch("http://" + window.location.host + "/html/default_card.html")
+    let current_url_folder = location.href.substring(0, location.href.lastIndexOf('/')+1);
+    fetch(current_url_folder + "default_card.html")
         .then(response => response.text())
         .then((data) => {
             event.target.remove();  // Supprmier le bouton de création de carte

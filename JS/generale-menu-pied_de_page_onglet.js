@@ -335,8 +335,8 @@ function couleur_item(){
 function insertNavbar() {
     // Define a variable, accessible on any js script.
     document.body.navbarInserted = false;
-
-    fetch("http://" + window.location.host + "/html/navbar.txt")
+    let current_url_folder = location.href.substring(0, location.href.lastIndexOf('/')+1);
+    fetch(current_url_folder + "navbar.txt")
         .then(response => response.text())
         .then(data => {
             document.body.insertAdjacentHTML("afterbegin", data);
@@ -347,7 +347,8 @@ function insertNavbar() {
 function insertFooter() {
     // Define a new variable, accessible on any js script
     document.body.footerInserted = false;
-    fetch("http://" + window.location.host + "/html/footer.txt")
+    let current_url_folder = location.href.substring(0, location.href.lastIndexOf('/')+1);
+    fetch(current_url_folder + "footer.txt")
         .then(response => response.text())
         .then(data => {
             document.body.insertAdjacentHTML("beforeend", data);
