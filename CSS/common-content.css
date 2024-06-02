@@ -287,3 +287,7 @@ footer h3 {
     background-color: darkred; 
     color: white; 
 }
+.navbar-submenu-item.active {
+    background-color: darkred; 
+    color: white; 
+}

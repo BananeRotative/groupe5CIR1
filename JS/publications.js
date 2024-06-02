@@ -78,12 +78,15 @@ function filter() {
 function createForm() {
     let content = document.getElementById("content");
     let formHTML = `
-<form onSubmit="return filter()" id="publ-form">
-    <input type="text" name="publFormAuthor">
-    <input type="text" name="publFormTitle">
-    <input type="date" name="publFormYear">
+    <form onSubmit="return filter()" id="publ-form">
+    <label for="publFormAuthor">Nom de l'auteur:</label>
+    <input type="text" name="publFormAuthor" id="publFormAuthor">
+    <label for="publFormTitle">Titre de la publication:</label>
+    <input type="text" name="publFormTitle" id="publFormTitle">
+    <label for="publFormYear">Année de publication:</label>
+    <input type="date" name="publFormYear" id="publFormYear">
     <ul style="list-style-type: none;">
-        <li><input type="radio" name="publFormType" value="toutes">Toutes</li>
+        <li><input type="radio" name="publFormType" value="toutes" checked>Toutes</li>
         <li><input type="radio" name="publFormType" value="article-revue">Articles de revue</li>
         <li><input type="radio" name="publFormType" value="comm">Communications</li>
     </ul>

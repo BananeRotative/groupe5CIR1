@@ -302,12 +302,13 @@ function telephone(){
         }
     });
 }
+function couleur_item() {
+    console.log('Ancienne couleur : Rouge');
+    console.log('Nouvelle couleur : Rouge-foncé');
 
-function couleur_item(){
-    //document.addEventListener('DOMContentLoaded', () => {
-        console.log('Ancienne couleur : Rouge');
-        console.log('Nouvelle couleur : Rouge-foncé');
-    let navbarItems = document.querySelectorAll('.navbar-menu-item');
+    let navbarItems = document.querySelectorAll('.navbar-menu-item, .navbar-submenu-item');
+    let submenuContainers = document.querySelectorAll('.submenu-container');
+
     // Vérifiez si un élément actif est stocké dans le localStorage
     let activeItemId = localStorage.getItem('activeNavbarItem');
     if (activeItemId) {
@@ -317,20 +318,62 @@ function couleur_item(){
         }
     }
 
-        navbarItems.forEach(item => {
-            item.addEventListener('click', () => {
-                // Supprimer la classe active de tous les items
-                navbarItems.forEach(navItem => navItem.classList.remove('active'));
+    navbarItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Supprimer la classe active de tous les items
+            navbarItems.forEach(navItem => navItem.classList.remove('active'));
 
-                // Ajouter la classe active à l'item cliqué
-                item.classList.add('active');
+            // Ajouter la classe active à l'item cliqué
+            item.classList.add('active');
 
-                // Stocker l'ID de l'item cliqué dans le localStorage
-                localStorage.setItem('activeNavbarItem', item.id);
+            // Stocker l'ID de l'item cliqué dans le localStorage
+            localStorage.setItem('activeNavbarItem', item.id);
+        });
+    });
+
+    // ajoute des gestionnaires d'événements pour les items de menu
+    submenuContainers.forEach(container => {
+        const parentItem = container.querySelector('.navbar-menu-item');
+        const submenuItems = container.querySelectorAll('.navbar-submenu-item');
+
+        parentItem.addEventListener('mouseenter', () => {
+            parentItem.style.backgroundColor = '#B22222'; // Rouge plus foncé
+        });
+
+        parentItem.addEventListener('mouseleave', () => {
+            parentItem.style.backgroundColor = ''; // Réinitialise la couleur
+        });
+
+        submenuItems.forEach(subItem => {
+            subItem.addEventListener('mouseenter', () => {
+                parentItem.style.backgroundColor = '#B22222'; // Rouge plus foncé
+            });
+
+            subItem.addEventListener('mouseleave', () => {
+                parentItem.style.backgroundColor = ''; // Réinitialise la couleur
             });
         });
-    
+    });
+
+    // Détecter la page actuelle et appliquer la classe active
+    const currentPage = window.location.pathname.split('/').pop();
+    const pageMap = {
+        'thematique.html': 'navbar-recherche',
+        'plateforme.html': 'navbar-recherche',
+        'contact.html': 'navbar-infos-contact',
+        'plan.html': 'navbar-infos-contact',
+        'offres.html': 'navbar-infos-contact'
+    };
+
+    if (pageMap[currentPage]) {
+        const parentItem = document.getElementById(pageMap[currentPage]);
+        if (parentItem) {
+            parentItem.classList.add('active');
+        }
+    }
 }
+
+
 
 function insertNavbar() {
     // Define a variable, accessible on any js script.
