@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title> Contact </title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-        <link rel="icon" href="./../Images/LabISEN.png">
+        <link rel="icon" href="./../images/LabISEN.png">
         <link rel="stylesheet" href="./../CSS/common-content.css">
         <link rel="stylesheet" href="./../CSS/contact.css">
         <script src="./../JS/generale-menu-pied_de_page_onglet.js" defer></script>
@@ -26,6 +26,10 @@
                         </svg> 
                     </div>
                     <input type="text" name="prenom" id="contact-name-field" placeholder="Prénom Nom" required>
+                    
+                </div>
+                <div class="errorAlert">
+                    <p id="invalidName"></p>
                 </div>
                 <div id="contact-mail">
                     <div class="contact-icon">
@@ -36,8 +40,23 @@
                     </div>
                     <input type="email" name="email" id="contact-email-field" placeholder="email@exemple.com" required>
                 </div>
+                <div class="errorAlert">
+                    <p id="invalidMail"></p>
+                </div>
                 <textarea name="commentaire" id="contact-comment" cols="30" rows="10" placeholder="Votre message (1000 caractere maximum)" required></textarea>
-                <input type="button" value="Envoyer" id="contact-submit-button" class="text-element" aria-disabled="true">
+                <div class="errorAlert">
+                    <p id="invalidComment"></p>
+                </div>
+                <input type="button" value="Valider" id="contact-submit-button" class="text-element" disabled>
+                <div id="form-game">
+                    <h3></h3>
+                    <div>
+                        <h4 id="readyTimer"></h4>
+                        <h4 id="gameTimer" hidden>10</h4>
+                        <input type="button" value="Cliquez !!!" id="clicker-button" class="text-element" hidden disabled>
+                    </div>
+                    <input type="submit" value="Envoyer" id="contact-send-button" class="text-element" disabled>
+                </div>
             </form>
         </div>
     </body>
