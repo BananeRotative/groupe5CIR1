@@ -259,7 +259,6 @@ function antiplagiat(){
 }
 
 function telephone(){
-    document.addEventListener('DOMContentLoaded', function() {
         var numerosTelephone = document.getElementsByClassName("footer-phone");
     
         Array.from(numerosTelephone).forEach(function(numero) {
@@ -284,7 +283,7 @@ function telephone(){
                     alert("Le numéro saisi ne correspond pas au numéro copié");
                 }
             });
-        });
+
         
     
         function jouerSonnerie() {
