@@ -259,6 +259,7 @@ function antiplagiat(){
 }
 
 function telephone(){
+        //prend tous les numeros de telephones
         var numerosTelephone = document.getElementsByClassName("footer-phone");
     
         Array.from(numerosTelephone).forEach(function(numero) {
